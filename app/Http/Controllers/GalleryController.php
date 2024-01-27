@@ -20,7 +20,6 @@ class GalleryController extends Controller
     function create(Request $request)
     {
         $request->validate([
-            'image' => 'required',
             'artwork_name' => 'required',
             'artist_name' => 'required',
             'materials' => 'required',
@@ -30,7 +29,6 @@ class GalleryController extends Controller
         ]);
 
         $data = $request->only([
-            'image',
             'artwork_name',
             'artist_name',
             'materials',
@@ -38,6 +36,16 @@ class GalleryController extends Controller
             'description',
             'year'
         ]);
+
+        if ($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = auth()->user()->fullname . '.' . $extension;
+            $file->storePubliclyAs('uploads/arts', $filename, "public");
+
+            $data['image'] = $filename;
+        }
 
         try 
         {
@@ -55,7 +63,6 @@ class GalleryController extends Controller
     function update(Request $request)
     {
         $request->validate([
-            'image' => 'required',
             'artwork_name' => 'required',
             'artist_name' => 'required',
             'materials' => 'required',
@@ -65,7 +72,6 @@ class GalleryController extends Controller
         ]);
 
         $data = $request->only([
-            'image',
             'artwork_name',
             'artist_name',
             'materials',
@@ -73,6 +79,16 @@ class GalleryController extends Controller
             'description',
             'year'
         ]);
+
+        if ($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = auth()->user()->fullname . '.' . $extension;
+            $file->storePubliclyAs('uploads/arts', $filename, "public");
+
+            $data['image'] = $filename;
+        }
 
         $gallery = gallery::find($request->id);
 
