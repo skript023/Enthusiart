@@ -20,11 +20,23 @@ class GalleryController extends Controller
     function create(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'image' => 'required',
+            'artwork_name' => 'required',
+            'artist_name' => 'required',
+            'materials' => 'required',
+            'dimension' => 'required',
+            'description' => 'required',
+            'year' => 'required'
         ]);
 
         $data = $request->only([
-            'name'
+            'image',
+            'artwork_name',
+            'artist_name',
+            'materials',
+            'dimension',
+            'description',
+            'year'
         ]);
 
         try 
@@ -43,11 +55,23 @@ class GalleryController extends Controller
     function update(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'image' => 'required',
+            'artwork_name' => 'required',
+            'artist_name' => 'required',
+            'materials' => 'required',
+            'dimension' => 'required',
+            'description' => 'required',
+            'year' => 'required'
         ]);
 
         $data = $request->only([
-            'name'
+            'image',
+            'artwork_name',
+            'artist_name',
+            'materials',
+            'dimension',
+            'description',
+            'year'
         ]);
 
         $gallery = gallery::find($request->id);
