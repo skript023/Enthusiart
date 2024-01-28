@@ -8,7 +8,7 @@ use App\Models\gallery;
 
 class GalleryController extends Controller
 {
-    function index()
+    public function index()
     {
         $categories = category::all();
 
@@ -17,7 +17,7 @@ class GalleryController extends Controller
         ]);
     }
 
-    function create(Request $request)
+    public function create(Request $request)
     {
         $request->validate([
             'artwork_name' => 'required',
@@ -60,7 +60,7 @@ class GalleryController extends Controller
         }
     }
 
-    function update(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
             'artwork_name' => 'required',
@@ -104,7 +104,7 @@ class GalleryController extends Controller
         }
     }
 
-    function delete(Request $request)
+    public function delete(Request $request)
     {
         $gallery = gallery::find($request->category);
 
