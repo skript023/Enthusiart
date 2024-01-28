@@ -10,11 +10,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $categories = category::all();
-
-        return view('categories', [
-            'categories' => $categories
-        ]);
+       
     }
 
     public function create(Request $request)
