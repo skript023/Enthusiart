@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.body {
+    margin: 0;
+    padding: 0px;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    background-color: #D8E0FF;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+  .ml-auto {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+    max-height: 40px;
+}
+.nav-link {
+    color: #000000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+}
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #364A99;
+}
+.nav-link:hover {
+    color: #364A99;
+}
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    margin: 0 10px;
+}
+.dropdown-item:hover {
+    background-color: #E9EEFC;
+    color: #364A99;
+}
+.btn-link {
+    color: #364A99;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 16px;
+}
+.btn-link:hover {
+    color: #364A99;
+    font-weight: bold;
+}
+.btn-fill {
+    background-color: #364A99;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.btn-fill:hover {
+    border-color: #364A99;
+    color: #364A99;
+    font-weight: 500;
+}
+.carousel img {
+    width: 650px;
+    height: 650px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about-section {
+    background-color: #FFFFFF;
+    margin: auto;
+}
+.about-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.section-text {
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    margin-right: 10px;
+}
+.vector1, .vector3 {
+    width: 400px;
+    height: 400px;
+}
+.vector2 {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.explore-section {
+    background-color: #E9EEFC;
+    margin: auto;
+}
+.joinArtist-section {
+    background-color: #FFFFFF;
+    margin: auto;
+}
+.footer {
+    background-color: #D8E0FF;
+    padding: 10px 50px;
+}
+.footer-brand img {
+    max-width: 100%;
+    height: auto;
+    max-height: 40px;
+}
+.footer-brand h4 {
+    color: #364A99;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+.footer-brand p {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer-links h5 {
+    font-weight: bold;
+    font-size: 16px;
+}
+.links {
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+}
+.cr-text h6 {
+    font-size: 16px;
+    text-align: center;
+}
+.register-section, .login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.form-wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.form-label {
+    font-size: 16px;
+}
+.btn-register {
+    background-color: #364A99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: medium;
+}
+.btn-register:hover {
+  background-color: #00416a;
+  color: white;
+}
+.page-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.page-text {
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: justify;
+}
+.card {
+    background-color: #F0F3FF;
+    padding: 30px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #6A6A6A;
+    text-align: center;
+}
+.card-text {
+    font-size: 16px;
+    margin-top: 20px;
+}
+.about-container img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+.btn-contact {
+    background-color: #364A99;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    max-width: 25%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: medium;
+    margin-top: 60px;
+}
+.btn-contact:hover {
+  background-color: #00416a;
+  color: white;
+}
+@media (max-width: 768px) {
+    .btn-contact {
+        max-width: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
