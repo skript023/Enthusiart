@@ -18,9 +18,11 @@
             <!-- Container Wrapper -->
             <div class="container d-flex justify-content-between align-items-center">
                 <!-- Logo -->
-                <a class="navbar-brand me-2" href="/">
-                    <img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
-                </a>
+				<div class="logo-wrapper">
+					<a class="navbar-brand me-2" href="#">
+						<img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
+					</a>
+				</div>
 
                 <!-- Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +47,7 @@
                             <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact</a>
+                            <a class="nav-link active" href="/contact">Contact</a>
                         </li>
                     </ul>
                     <div class="ml-auto">

@@ -19,9 +19,11 @@
 			<!-- Container Wrapper -->
 			<div class="container d-flex justify-content-between align-items-center">
 				<!-- Logo -->
-				<a class="navbar-brand me-2" href="/">
-					<img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
-				</a>
+				<div class="logo-wrapper">
+					<a class="navbar-brand me-2" href="#">
+						<img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
+					</a>
+				</div>
 
 				<!-- Menu -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,22 +192,6 @@
 	</footer>
 	<!-- Footer End -->
 
-	<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		let carouselItems = document.querySelectorAll('.carousel-item');
-
-		carouselItems.forEach(function(item) {
-			let scrollDownButton = document.createElement('div');
-			scrollDownButton.classList.add('scroll-down');
-			scrollDownButton.innerHTML = '<a href="#" onclick="scrollToAbout()"><i class="fa-solid fa-circle-chevron-down fa-2xl" style="color: #fff;"></i></a>';
-			item.appendChild(scrollDownButton);
-		});
-	});
-	function scrollToAbout() {
-		document.getElementById('about').scrollIntoView({
-			behavior: 'smooth'
-		});
-	}
-	</script>
+	<script src="../assets/js/script.js"></script>
 </body>
 </html>
