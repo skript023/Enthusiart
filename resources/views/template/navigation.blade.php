@@ -39,7 +39,7 @@
                 <div class="ml-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="btn btn-link" href="#">Login</a>
+                            <a class="btn btn-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-fill" href="#">Register</a>
