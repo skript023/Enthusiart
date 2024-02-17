@@ -6,7 +6,7 @@
             <!-- Logo -->
             <div class="logo-wrapper">
                 <a class="navbar-brand me-2" href="#">
-                    <img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
+                    <img src="{{ asset('assets') }}/img/logo-72.png" alt="Enthusiart Logo">
                 </a>
             </div>
 
@@ -30,10 +30,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/about') ? 'active' : '' }}" href="/about">About</a>
+                        <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/contact') ? 'active' : '' }}" href="/contact">Contact</a>
+                        <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/contact">Contact</a>
                     </li>
                 </ul>
                 <div class="ml-auto">
