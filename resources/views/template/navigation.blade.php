@@ -5,7 +5,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <!-- Logo -->
             <div class="logo-wrapper">
-                <a class="navbar-brand me-2" href="#">
+                <a class="navbar-brand me-2" href="/">
                     <img src="{{ asset('assets') }}/img/logo-72.png" alt="Enthusiart Logo">
                 </a>
             </div>
@@ -42,7 +42,7 @@
                             <a class="btn btn-link" href="/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-fill" href="#">Register</a>
+                            <a class="btn btn-fill" href="/register">Register</a>
                         </li>
                     </ul>
                 </div>

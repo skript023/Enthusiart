@@ -186,7 +186,7 @@
 .form-label {
     font-size: 16px;
 }
-.btn-register {
+.btn-process {
     background-color: #364A99;
     color: white;
     border: none;
@@ -196,7 +196,7 @@
     font-size: 16px;
     font-weight: medium;
 }
-.btn-register:hover {
+.btn-process:hover {
   background-color: #00416a;
   color: white;
 }
@@ -251,5 +251,82 @@
         max-width: none;
         width: 100%;
         margin-top: 20px;
+    }
+}
+.card-artwork {
+    background-color: #F0F3FF;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #6A6A6A;
+    text-align: left;
+}
+.artist-name {
+    color: #364A99;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.art-title {
+    color: #364A99;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+.card-desc {
+    color: #6A6A6A;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: justify;
+}
+.card-link{
+    color: #005386;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.icon-wrapper {
+    color: #364A99;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-menu a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu a:hover {
+    background-color: #E9EEFC;
+    color: #364A99;
+}
+.btn-save {
+    background-color: #364A99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 16%;
+    font-size: 16px;
+    font-weight: medium;
+}
+.btn-save:hover {
+  background-color: #00416a;
+  color: white;
+}
+@media (max-width: 768px) {
+    .btn-save {
+        max-width: none;
+        width: 100%;
     }
 }
