@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('favorite_id');
             $table->string('fullname');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image');
             $table->foreign('favorite_id')->references('id')->on('favorites')->cascadeOnDelete();
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
