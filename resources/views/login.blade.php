@@ -32,7 +32,8 @@
                 <div class="col-md-6">
                     <div class="container form-wrapper">
                         <h2 class="section-title text-center mb-4 m-3" style="font-size: 28px;">Sign In</h2>
-                        <form action="#">
+                        <form action="/auth/login" method="post">
+                            @csrf
                             <!-- Email -->
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>

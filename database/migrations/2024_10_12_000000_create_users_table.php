@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('favorite_id');
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('favorite');
             $table->string('image');
+            $table->foreign('favorite_id')->references('id')->on('favorites')->cascadeOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });

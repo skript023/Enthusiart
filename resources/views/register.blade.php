@@ -31,7 +31,7 @@
                 <div class="col-md-6">
                     <div class="container form-wrapper">
                         <h2 class="section-title text-center mb-4 m-3" style="font-size: 28px;">Sign Up</h2>
-                        <form action="#" method="POST">
+                        <form action="/auth/register" method="POST">
                             <!-- Register as -->
                             <div class="form-group mb-3">
                                 <label for="role" class="form-label">Register as</label>
