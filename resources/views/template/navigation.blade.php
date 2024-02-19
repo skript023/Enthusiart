@@ -36,6 +36,7 @@
                         <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/contact">Contact</a>
                     </li>
                 </ul>
+                @guest
                 <div class="ml-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -46,6 +47,33 @@
                         </li>
                     </ul>
                 </div>
+                @else
+                <div class="ml-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/favorite">
+                                <i class="fa-regular fa-heart fa-xl" role="button" style="color: #364A99;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-circle-user fa-lg m-3 mt-4 mb-4"></i>
+                                <span class="d-none d-sm-inline">{{ Auth::user()->fullname }}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">My Account</a></li>
+                                <li><a class="dropdown-item" href="#">My Artworks</a></li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                @endguest
             <!-- Menu End -->
         </div>
         <!-- Container Wrapper End -->

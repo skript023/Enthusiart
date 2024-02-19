@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\toastr;
 use App\Models\User;
 
 class UserController extends Controller
@@ -33,7 +33,6 @@ class UserController extends Controller
         } 
         catch (\Throwable $th) 
         {
-            ExceptionMessageController::save_error($th);
 
             toastr()->error('Registration Failed');
 

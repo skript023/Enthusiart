@@ -16,7 +16,7 @@
             <div class="row align-items-left mb-5">
                 <div class="col-md-6">
                     <div class="logo-wrapper mt-3">
-                        <a class="logo-img" href="#">
+                        <a class="logo-img" href="/">
                             <img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
                         </a>
                     </div>
@@ -44,10 +44,10 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" class="form-control" placeholder="Enter password" required>
                             </div>
-                            <button type="submit" class="btn btn-register mt-4 text-center">Sign In</button>
+                            <button type="submit" class="btn btn-process mt-4 text-center">Sign In</button>
                             <p class="form-label text-center mt-2">
                                 Don't have an account?
-                                <a href="#">Sign Up</a>
+                                <a href="/register">Sign Up</a>
                             </p>
                         </form>
                     </div>

@@ -15,7 +15,7 @@
             <div class="row align-items-left mb-5">
                 <div class="col-md-6">
                     <div class="logo-wrapper mt-3">
-                        <a class="logo-img" href="#">
+                        <a class="logo-img" href="/">
                             <img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
                         </a>
                     </div>
@@ -32,6 +32,7 @@
                     <div class="container form-wrapper">
                         <h2 class="section-title text-center mb-4 m-3" style="font-size: 28px;">Sign Up</h2>
                         <form action="/auth/register" method="POST">
+                            @csrf
                             <!-- Register as -->
                             <div class="form-group mb-3">
                                 <label for="role" class="form-label">Register as</label>
@@ -48,8 +49,8 @@
                             </div>
                             <!-- Full Name -->
                             <div class="form-group mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter full name" required>
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Enter full name" required>
                             </div>
                             <!-- Email -->
                             <div class="form-group mb-3">
@@ -64,7 +65,7 @@
                             <button type="submit" class="btn btn-process mt-4 text-center">Sign Up</button>
                             <p class="form-label text-center mt-2">
                                 Already have an account?
-                                <a href="login.html">Sign In</a>
+                                <a href="/login">Sign In</a>
                             </p>
                         </form>
                     </div>

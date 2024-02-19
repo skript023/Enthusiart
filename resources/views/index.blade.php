@@ -52,7 +52,7 @@
                 <p class="section-text">
                     Embark on a journey of artistic discovery and find the masterpiece that resonates with your soul.
                 </p>
-                <a class="btn btn-fill" href="#">Explore Artworks</a>
+                <a class="btn btn-fill" href="/gallery">Explore Artworks</a>
             </div>
             <div class="col-md-6">
                 <img src="../assets/img/vector-02.png" class="vector2" alt="Explore Artworks">
@@ -61,6 +61,7 @@
     </div>
 </section>
 
+@guest
 <!-- Join as an Artist -->
 <section class="py-5 joinArtist-section">
     <div class="container">
@@ -78,4 +79,5 @@
         </div>
     </div>
 </section>
+@endguest
 @endsection
