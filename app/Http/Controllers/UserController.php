@@ -107,7 +107,7 @@ class UserController extends Controller
             {
                 $request->session()->regenerate();
 
-                return redirect()->intended('/register');
+                return redirect()->intended('/');
             }
             else
             {

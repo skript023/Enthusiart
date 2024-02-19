@@ -21,6 +21,7 @@ use App\Http\Controllers\FavoriteController;
 //Route Command
 Route::post('/auth/login', [UserController::class, 'login']);
 Route::post('/auth/register', [UserController::class, 'store']);
+Route::get('/auth/logout', [UserController::class, 'logout'])->name('logout');
 //Route Views
 Route::get('/', fn () => view('index'));
 Route::get('/about', fn () => view('about'));
