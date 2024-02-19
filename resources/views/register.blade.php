@@ -34,7 +34,7 @@
                         <form action="/auth/register" method="POST">
                             @csrf
                             <!-- Register as -->
-                            <div class="form-group mb-3">
+                            {{--  <div class="form-group mb-3">
                                 <label for="role" class="form-label">Register as</label>
                                 <div class="col-sm-8">
                                     <div class="form-check form-check-inline">
@@ -46,7 +46,7 @@
                                         <label class="form-check-label" for="artlover">Artlover</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  --}}
                             <!-- Full Name -->
                             <div class="form-group mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
@@ -55,14 +55,14 @@
                             <!-- Email -->
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email address" required>
                             </div>
                             <!-- Password -->
                             <div class="form-group mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" class="form-control" placeholder="Enter password" required>
                             </div>
-                            <button type="submit" class="btn btn-process mt-4 text-center">Sign Up</button>
+                            <input type="submit" class="btn btn-process mt-4 text-center" value="Sign Up" name="register">
                             <p class="form-label text-center mt-2">
                                 Already have an account?
                                 <a href="/login">Sign In</a>

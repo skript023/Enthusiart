@@ -18,9 +18,6 @@ use App\Http\Controllers\FavoriteController;
 |
 */
 
-//Route Command
-Route::post('/auth/login', [UserController::class, 'login']);
-Route::post('/auth/register', [UserController::class, 'create']);
 //Route Views
 Route::get('/', fn () => view('index'));
 Route::get('/about', fn () => view('about'));
@@ -31,3 +28,7 @@ Route::get('/register', fn() => view('register'));
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/gallery', [GalleryController::class, 'index']);
 });
+
+//Route Command
+Route::post('/auth/login', [UserController::class, 'login']);
+Route::post('/auth/register', [UserController::class, 'create']);

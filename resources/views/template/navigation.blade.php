@@ -65,7 +65,7 @@
                                 <li><a class="dropdown-item" href="#">My Artworks</a></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST">
-                                        
+                                        @csrf
                                         <button type="submit" class="dropdown-item">Logout</button>
                                     </form>
                                 </li>

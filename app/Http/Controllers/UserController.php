@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\toastr;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -26,20 +26,21 @@ class UserController extends Controller
 
         $data['email_verified_at'] = now();
         $data['password'] = Hash::make($data['password']);
+        dd($data);
 
         try 
         {
-            $user = User::create($data);
+            User::create($data);
         } 
         catch (\Throwable $th) 
         {
 
-            toastr()->error('Registration Failed');
+            dd(($th));
 
             return back();
         }
 
-        return redirect()->intended('/');
+        return redirect()->intended('/login');
     }
 
     public function update(Request $request)
@@ -78,10 +79,7 @@ class UserController extends Controller
         }
         catch (\Throwable $th) 
         {
-            ExceptionMessageController::save_error($th);
-
-            toastr()->error('Failed update profile');
-
+           
             return back();
         }
 
@@ -101,8 +99,6 @@ class UserController extends Controller
         {
             $user = user::where('email', $request->username)->first();
 
-            if (empty($user)) 
-                toastr()->error('The provided credentials do not match our records.', 'Login Failed');
 
             $credentials['username'] = $user->username;
         }
@@ -119,14 +115,12 @@ class UserController extends Controller
             }
             else
             {
-                toastr()->error('The provided credentials do not match our records.', 'Login Failed');
+
             }
         }
         catch (\Throwable $th) 
         {
-            ExceptionMessageController::save_error($th);
 
-            toastr()->error('Login failed, unable connect to server', 'Login Failed');
         }
 
         return back();
