@@ -60,9 +60,11 @@
                             <!-- Password -->
                             <div class="form-group mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
                             </div>
-                            <input type="submit" class="btn btn-process mt-4 text-center" value="Sign Up" name="register">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-process mt-4 text-center">Sign Up</button>
+                            </div>
                             <p class="form-label text-center mt-2">
                                 Already have an account?
                                 <a href="/login">Sign In</a>

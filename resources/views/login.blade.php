@@ -37,12 +37,12 @@
                             <!-- Email -->
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email address" required>
                             </div>
                             <!-- Password -->
                             <div class="form-group mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" id="password" class="form-control" placeholder="Enter password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required>
                             </div>
                             <button type="submit" class="btn btn-process mt-4 text-center">Sign In</button>
                             <p class="form-label text-center mt-2">
