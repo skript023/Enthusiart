@@ -35,7 +35,7 @@ class UserController extends Controller
         catch (\Throwable $th) 
         {
 
-            dd($th);
+            toastr()->error('Registeration Failed');
 
             return back();
         }
