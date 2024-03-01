@@ -298,24 +298,6 @@
 .icon-wrapper {
     color: #364A99;
 }
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    border-radius: 5px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown-menu a {
-    color: black;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-menu a:hover {
-    background-color: #E9EEFC;
-    color: #364A99;
-}
 .btn-save {
     background-color: #364A99;
     color: white;
