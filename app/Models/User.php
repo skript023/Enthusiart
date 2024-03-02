@@ -44,4 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function artworks()
+    {
+        return $this->hasMany(gallery::class, 'id', 'user_id');
+    }
 }
