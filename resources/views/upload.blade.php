@@ -28,7 +28,7 @@
                             <div class="form-group mb-3">
                                 <label for="category" class="form-label">Category</label>
                                 <select class="form-select" id="category" name="category" required>
-                                    <option value="">Select Category</option>
+                                    <option value="" disabled selected>Select Category</option>
                                     <option value="Art">Art</option>
                                     <option value="Photography">Photography</option>
                                 </select>

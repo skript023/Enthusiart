@@ -2,7 +2,7 @@
 @section('content')
 <section class="py-5 favorite-section mb-5" style="margin-top: 80px;">
     <div class="container">
-        <h1 class="page-title text-center">Artworks</h1>
+        <h1 class="page-title text-center">My Favorites</h1>
         <!-- Card Section -->
         <div class="row d-flex">
             <div class="card-artwork">

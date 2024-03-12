@@ -45,3 +45,21 @@ inputFile.addEventListener('change', function () {
         alert("Image size more than 2MB");
     }
 })
+
+//Upload Avatar
+const avatarFileUpload = document.getElementById('AvatarFileUpload')
+const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
+const imageSelector = avatarFileUpload.querySelector('.avatar-selector-btn')
+const imageInput = avatarFileUpload.querySelector('input[name="avatar"]')
+
+imageSelector.addEventListener('click', e => {
+    e.preventDefault()
+    imageInput.click()
+})
+imageInput.addEventListener('change', e => {
+    var reader = new FileReader();
+    reader.onload = function(){
+        imageViewer.src = reader.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+})
