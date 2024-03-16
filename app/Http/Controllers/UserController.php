@@ -11,28 +11,28 @@ class UserController extends Controller
 {
     public function store(Request $request)
     {
-        try 
+        try
         {
             $request->validate([
-                'fullname' => 'required', 
-                'email' => 'required', 
+                'fullname' => 'required',
+                'email' => 'required',
                 'password' => 'required'
             ]);
-    
+
             $data = $request->only([
-                'fullname', 
+                'fullname',
                 'email',
                 'password'
             ]);
-    
+
             $data['email_verified_at'] = now();
             $data['password'] = Hash::make($data['password']);
 
             User::create($data);
 
             return redirect()->intended('/login');
-        } 
-        catch (\Throwable $th) 
+        }
+        catch (\Throwable $th)
         {
 
             toastr()->error('Registeration Failed');
@@ -43,45 +43,72 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        $request->validate([
-            'fullname' => 'required',
-            'username' => 'required',
-            'email' => 'required:|email:dns', 
-            'password' => 'required|confirmed|min:6'
-        ]);
-
-        $data = $request->only([
-            'fullname', 
-            'username', 
-            'email',
-            'password'
-        ]);
-
-        if ($request->hasFile('image'))
-        {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = auth()->user()->fullname . '.' . $extension;
-            $file->storePubliclyAs('uploads/avatar', $filename, "public");
-
-            $data['image'] = $filename;
-        }
-
-        $data['password'] = Hash::make($data['password']);
-
-        $user = user::find($request->id);
-
         try
         {
+            $request->validate([
+                'fullname' => 'required',
+                'username' => 'required',
+                'email' => 'required:|email:dns',
+            ]);
+
+            $data = $request->only([
+                'fullname',
+                'username',
+                'email',
+            ]);
+
+            if ($request->hasFile('image'))
+            {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = auth()->user()->fullname . '.' . $extension;
+                $file->storePubliclyAs('uploads/avatar', $filename, "public");
+
+                $data['image'] = $filename;
+            }
+
+            $user = user::find($request->id);
+
             $user->update($data);
         }
-        catch (\Throwable $th) 
+        catch (\Throwable $th)
         {
-           
+
             return back();
         }
 
         return redirect()->intended('/dashboard/profile');
+    }
+
+    public function update_password(Request $request)
+    {
+        try
+        {
+            $request->validate([
+                'password' => 'required|confirmed|min:6',
+                'current_password'=> 'required',
+            ]);
+
+            $data = $request->only([
+                'password',
+                'current_password',
+            ]);
+
+            $user = user::find($request->id);
+            if (Hash::check($data['current_password'], $user->password))
+            {
+                $data['password'] = Hash::make($data['password']);
+                $user->update($data);
+
+                return redirect()->intended('/user/profile')->with('success','Profile updated successfully');
+            }
+
+            return back()->with('error','Failed update profile');
+        }
+        catch (\Throwable $th)
+        {
+            return back()->with('error', $th->getMessage());
+        }
     }
 
     public function login(Request $request)
@@ -92,18 +119,18 @@ class UserController extends Controller
                 'email' => 'required',
                 'password' => 'required'
             ]);
-            
+
             $credentials = $request->only(['email', 'password']);
-    
+
             if (filter_var($request->username, FILTER_VALIDATE_EMAIL))
             {
                 $user = user::where('email', $request->email)->first();
-    
-    
+
+
                 $credentials['email'] = $user->email;
             }
 
-            if (auth()->attempt($credentials, $request->remember)) 
+            if (auth()->attempt($credentials, $request->remember))
             {
                 $request->session()->regenerate();
 
@@ -116,26 +143,22 @@ class UserController extends Controller
                 return back();
             }
         }
-        catch (\Throwable $th) 
+        catch (\Throwable $th)
         {
-            toastr()->error('Login failed, unable connect to server', 'Login Failed');
-
-            dd($th);
-
-            return back();
+            return back()->with('error', $th->getMessage());
         }
 
-        
+
     }
 
     public function logout(Request $request)
     {
         auth()->logout();
-    
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }

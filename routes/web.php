@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/myartwork', [ArtworkController::class, 'myArtworks']);
     Route::get('/auth/logout', [UserController::class, 'logout'])->name('logout');
     Route::post('/artwork/upload', [ArtworkController::class, 'upload']);
+    Route::patch('/user/update/{id}', [UserController::class,'update']);
 
     /*
     |--------------------------------------------------------------------------

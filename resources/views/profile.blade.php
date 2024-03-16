@@ -29,11 +29,12 @@
                 <div class="border rounded-3 p-3" style="background-color: #F0F3FF;">
                     <h4 class="section-title m-3 mb-5">Edit Profile</h4>
                     <div class="form-edit m-3 mt-4">
-                        <form action="#" method="post">
+                        <form action="/user/update/{{ auth()->user()->id }}" method="post">
+                            @method('patch')
                             <p class="mb-3">Profile Picture</p>
                             <div id="AvatarFileUpload">
                                 <div class="selected-image-holder">
-                                    <img src="../assets/img/vector-10.svg" alt="AvatarInput">
+                                    <img src="{{ asset('storage') }}/uploads/avatar/vector-10.svg" alt="AvatarInput">
                                 </div>
                                 <div class="avatar-selector">
                                     <a href="#" class="avatar-selector-btn">
@@ -110,7 +111,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="new_password" class="form-label">New Password</label>
-                                <input type="password" name="new_password" id="new_password" class="form-control" required>
+                                <input type="password" name="password" id="new_password" class="form-control" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password_confirmation" class="form-label">Confirm New Password</label>
