@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth']], function () {
     | routes that only show view data either from controller or call view directly
     |
     */
+    Route::get('/user/profile', fn() => view('profile'))->name('profile');
     Route::get('/upload', fn() => view('upload'));
     Route::get('/gallery', [GalleryController::class, 'index']);
 });

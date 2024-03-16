@@ -61,7 +61,7 @@
                                 <span class="d-none d-sm-inline">{{ Auth::user()->fullname }}</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">My Account</a></li>
+                                <li><a class="dropdown-item" href="{{ route('profile') }}">My Account</a></li>
                                 <li><a class="dropdown-item" href="/myartwork">My Artworks</a></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="get">
