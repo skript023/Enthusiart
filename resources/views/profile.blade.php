@@ -30,6 +30,7 @@
                     <h4 class="section-title m-3 mb-5">Edit Profile</h4>
                     <div class="form-edit m-3 mt-4">
                         <form action="/user/update/{{ auth()->user()->id }}" method="post">
+                            @csrf
                             @method('patch')
                             <p class="mb-3">Profile Picture</p>
                             <div id="AvatarFileUpload">
@@ -59,7 +60,7 @@
                                 <input type="text" class="form-control" name="phone" id="phone" placeholder="">
                             </div>
                             <!-- Social Media -->
-                            <div class="form-group mb-3">
+                            {{-- <div class="form-group mb-3">
                                 <p>Social Media <i>(optional)</i></p>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">
@@ -91,7 +92,7 @@
                                     </span>
                                     <input type="text" name="linkedin" class="form-control" placeholder="Linkedin">
                                 </div>
-                            </div>
+                            </div> --}}
                             <button type="submit" class="btn btn-save mt-4">Save</button>
                         </form>
                     </div>
@@ -103,8 +104,9 @@
                 <div class="border rounded-3 p-3" style="background-color: #F0F3FF;">
                     <h4 class="section-title m-3 mb-5">Change Password</h4>
                     <div class="form-edit m-3 mt-4">
-                        <form action="#" method="post">
+                        <form action="/user/password/{{ auth()->user()->id }}" method="post">
                             @csrf
+                            @method('patch')
                             <div class="form-group mb-3">
                                 <label for="password" class="form-label">Current Password</label>
                                 <input type="password" name="current_password" id="current_password" class="form-control" required>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
@@ -27,7 +28,7 @@ use App\Http\Controllers\ArtworkController;
 | routes that only call controller to query some required data
 |
 */
-Route::post('/auth/login', [UserController::class, 'login']);
+Route::post('/auth/login', [AuthController::class, 'login']);
 Route::post('/auth/register', [UserController::class, 'store']);
 
 /*
@@ -54,11 +55,11 @@ Route::group(['middleware' => ['auth']], function () {
     | routes that only call controller to query some required data
     |
     */
+    Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/myartwork', [ArtworkController::class, 'myArtworks']);
-    Route::get('/auth/logout', [UserController::class, 'logout'])->name('logout');
     Route::post('/artwork/upload', [ArtworkController::class, 'upload']);
-    Route::patch('/user/update/{id}', [UserController::class,'update']);
-
+    Route::patch('/user/update/{id}', [UserController::class, 'update']);
+    Route::patch('/user/password/{id}', [UserController::class, 'update_password']);
     /*
     |--------------------------------------------------------------------------
     | Route View Under Middleware

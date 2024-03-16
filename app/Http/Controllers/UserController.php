@@ -34,10 +34,7 @@ class UserController extends Controller
         }
         catch (\Throwable $th)
         {
-
-            toastr()->error('Registeration Failed');
-
-            return back();
+            return back()->with('error', $th->getMessage());
         }
     }
 
@@ -70,14 +67,13 @@ class UserController extends Controller
             $user = user::find($request->id);
 
             $user->update($data);
+
+            return redirect()->intended('/dashboard/profile');
         }
         catch (\Throwable $th)
         {
-
-            return back();
+            return back()->with('error', $th->getMessage());
         }
-
-        return redirect()->intended('/dashboard/profile');
     }
 
     public function update_password(Request $request)
@@ -100,7 +96,7 @@ class UserController extends Controller
                 $data['password'] = Hash::make($data['password']);
                 $user->update($data);
 
-                return redirect()->intended('/user/profile')->with('success','Profile updated successfully');
+                return redirect()->intended('/user/profile');
             }
 
             return back()->with('error','Failed update profile');
@@ -109,56 +105,5 @@ class UserController extends Controller
         {
             return back()->with('error', $th->getMessage());
         }
-    }
-
-    public function login(Request $request)
-    {
-        try
-        {
-            $request->validate([
-                'email' => 'required',
-                'password' => 'required'
-            ]);
-
-            $credentials = $request->only(['email', 'password']);
-
-            if (filter_var($request->username, FILTER_VALIDATE_EMAIL))
-            {
-                $user = user::where('email', $request->email)->first();
-
-
-                $credentials['email'] = $user->email;
-            }
-
-            if (auth()->attempt($credentials, $request->remember))
-            {
-                $request->session()->regenerate();
-
-                return redirect()->intended('/');
-            }
-            else
-            {
-                toastr()->error('The provided credentials do not match our records.', 'Login Failed');
-
-                return back();
-            }
-        }
-        catch (\Throwable $th)
-        {
-            return back()->with('error', $th->getMessage());
-        }
-
-
-    }
-
-    public function logout(Request $request)
-    {
-        auth()->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/');
     }
 }
