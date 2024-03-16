@@ -107,7 +107,7 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="password" class="form-label">Current Password</label>
-                                <input type="password" name="current_password" id="password" class="form-control" required>
+                                <input type="password" name="current_password" id="current_password" class="form-control" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="new_password" class="form-label">New Password</label>
