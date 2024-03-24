@@ -110,7 +110,7 @@ class GalleryController extends Controller
         {
             $gallery->delete();
 
-            return redirect()->intended('/dashboard/users');
+            return redirect()->intended('/myartwork');
         }
 
         return back();
