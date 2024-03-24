@@ -15,7 +15,7 @@
                         <div class="icon-wrapper">
                             <i class="fa-solid fa-ellipsis" id="ellipsis-icon" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <div class="dropdown-menu" aria-labelledby="ellipsis-icon">
-                                <a href="#" class="dropdown-item delete-option">Delete</a>
+                                <a href="/artwork/delete/{{ $artwork->id }}" class="dropdown-item delete-option">Delete</a>
                             </div>
                         </div>
                     </div>

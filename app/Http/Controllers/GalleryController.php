@@ -45,13 +45,13 @@ class GalleryController extends Controller
             $data['image'] = $filename;
         }
 
-        try 
+        try
         {
             $user = gallery::create($data);
 
             return redirect()->intended('/');
-        } 
-        catch (\Throwable $th) 
+        }
+        catch (\Throwable $th)
         {
 
             return back();
@@ -90,13 +90,13 @@ class GalleryController extends Controller
 
         $gallery = gallery::find($request->id);
 
-        try 
+        try
         {
             $gallery->update($data);
 
             return redirect()->intended('/');
-        } 
-        catch (\Throwable $th) 
+        }
+        catch (\Throwable $th)
         {
             return back();
         }
@@ -104,7 +104,7 @@ class GalleryController extends Controller
 
     public function delete(Request $request)
     {
-        $gallery = gallery::find($request->category);
+        $gallery = gallery::find($request->id);
 
         if (isset($gallery))
         {

@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/artwork/upload', [ArtworkController::class, 'upload']);
     Route::patch('/user/update/{id}', [UserController::class, 'update']);
     Route::patch('/user/password/{id}', [UserController::class, 'update_password']);
+    Route::get('/artwork/delete/{id}', [GalleryController::class,'delete']);
     /*
     |--------------------------------------------------------------------------
     | Route View Under Middleware
