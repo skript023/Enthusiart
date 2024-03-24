@@ -15,7 +15,7 @@
                             <h3 class="mt-3">Upload Image</h3>
                             <p>Image size must be less than <span>2MB</span></p>
                         </div>
-                        <button class="btn select-image mb-1">Select Image</button>
+                        <button type="button" id="select-artwork" class="btn select-image mb-1">Select Image</button>
                     </div>
                     <div class="box d-flex justify-content-center">
                         <div class="container">
@@ -72,5 +72,38 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        <script>
+            const selectImage = document.getElementById('select-artwork');
+            const inputFile = document.querySelector('#file');
+            const imgArea = document.querySelector('.img-area');
+
+
+            selectImage.addEventListener('click', function () {
+                document.getElementById('file').click();
+            })
+
+
+            inputFile.addEventListener('change', function () {
+                const image = this.files[0]
+                if(image.size < 2000000) {
+                    const reader = new FileReader();
+                    reader.onload = ()=> {
+                        const allImg = imgArea.querySelectorAll('img');
+                        allImg.forEach(item=> item.remove());
+                        const imgUrl = reader.result;
+                        const img = document.createElement('img');
+                        img.src = imgUrl;
+                        imgArea.appendChild(img);
+                        imgArea.classList.add('active');
+                        imgArea.dataset.img = image.name;
+                    }
+                    reader.readAsDataURL(image);
+                } else {
+                    alert("Image size more than 2MB");
+                }
+            })
+        </script>
+    @endpush
 </section>
 @endsection

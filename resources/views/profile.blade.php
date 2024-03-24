@@ -126,23 +126,25 @@
             </div>
         </div>
     </div>
-    <script>
-        const avatarFileUpload = document.getElementById('AvatarFileUpload')
-        const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
-        const imageSelector = avatarFileUpload.querySelector('.avatar-selector-btn')
-        const imageInput = avatarFileUpload.querySelector('input[name="avatar"]')
+    @push('scripts')
+        <script>
+            const avatarFileUpload = document.getElementById('AvatarFileUpload')
+            const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
+            const imageSelector = avatarFileUpload.querySelector('.avatar-selector-btn')
+            const imageInput = avatarFileUpload.querySelector('input[name="avatar"]')
 
-        imageSelector.addEventListener('click', e => {
-            e.preventDefault()
-            imageInput.click()
-        })
-        imageInput.addEventListener('change', e => {
-            var reader = new FileReader();
-            reader.onload = function(){
-                imageViewer.src = reader.result;
-            };
-            reader.readAsDataURL(e.target.files[0]);
-        })
-    </script>
+            imageSelector.addEventListener('click', e => {
+                e.preventDefault()
+                imageInput.click()
+            })
+            imageInput.addEventListener('change', e => {
+                var reader = new FileReader();
+                reader.onload = function(){
+                    imageViewer.src = reader.result;
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            })
+        </script>
+    @endpush
 </section>
 @endsection
