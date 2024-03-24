@@ -46,12 +46,12 @@
                             </div>
                             <!-- Full Name -->
                             <div class="form-group mb-3" style="margin-top: 90px;">
-                                <label for="name" class="form-label">Full Name</label>
+                                <label for="fullname" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" name="fullname" id="fullname" placeholder="" required>
                             </div>
                             <!-- Email -->
                             <div class="form-group mb-3">
-                                <label for="password" class="form-label">Email</label>
+                                <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" name="email" id="email" placeholder="" required>
                             </div>
                             <!-- Phone Number -->
@@ -126,5 +126,23 @@
             </div>
         </div>
     </div>
+    <script>
+        const avatarFileUpload = document.getElementById('AvatarFileUpload')
+        const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
+        const imageSelector = avatarFileUpload.querySelector('.avatar-selector-btn')
+        const imageInput = avatarFileUpload.querySelector('input[name="avatar"]')
+
+        imageSelector.addEventListener('click', e => {
+            e.preventDefault()
+            imageInput.click()
+        })
+        imageInput.addEventListener('change', e => {
+            var reader = new FileReader();
+            reader.onload = function(){
+                imageViewer.src = reader.result;
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        })
+    </script>
 </section>
 @endsection
