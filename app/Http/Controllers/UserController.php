@@ -67,7 +67,7 @@ class UserController extends Controller
 
             $user->update($data);
 
-            return redirect()->intended('/dashboard/profile');
+            return redirect()->intended('/user/profile');
         }
         catch (\Throwable $th)
         {
