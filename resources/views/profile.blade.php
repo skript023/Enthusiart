@@ -47,17 +47,17 @@
                             <!-- Full Name -->
                             <div class="form-group mb-3" style="margin-top: 90px;">
                                 <label for="fullname" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" name="fullname" id="fullname" placeholder="" required>
+                                <input value="{{ auth()->user()->fullname }}" type="text" class="form-control" name="fullname" id="fullname" placeholder="" required>
                             </div>
                             <!-- Email -->
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="" required>
+                                <input value="{{ auth()->user()->email }}" type="email" class="form-control" name="email" id="email" placeholder="" required>
                             </div>
                             <!-- Phone Number -->
                             <div class="form-group mb-3">
                                 <label for="phone" class="form-label">Phone Number <i>(optional)</i></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="">
+                                <input value="{{ auth()->user()->phone }}" type="text" class="form-control" name="phone" id="phone" placeholder="">
                             </div>
                             <!-- Social Media -->
                             {{-- <div class="form-group mb-3">

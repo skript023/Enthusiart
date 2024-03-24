@@ -44,14 +44,13 @@ class UserController extends Controller
         {
             $request->validate([
                 'fullname' => 'required',
-                'username' => 'required',
                 'email' => 'required:|email:dns',
             ]);
 
             $data = $request->only([
                 'fullname',
-                'username',
                 'email',
+                'phone'
             ]);
 
             if ($request->hasFile('image'))
