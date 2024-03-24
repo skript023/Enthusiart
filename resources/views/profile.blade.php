@@ -29,7 +29,7 @@
                 <div class="border rounded-3 p-3" style="background-color: #F0F3FF;">
                     <h4 class="section-title m-3 mb-5">Edit Profile</h4>
                     <div class="form-edit m-3 mt-4">
-                        <form action="/user/update/{{ auth()->user()->id }}" method="post">
+                        <form action="/user/update/{{ auth()->user()->id }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('patch')
                             <p class="mb-3">Profile Picture</p>
@@ -41,7 +41,7 @@
                                     <a href="#" class="avatar-selector-btn">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="black" d="M17 12c0 1.7-1.3 3-3 3s-3-1.3-3-3s1.3-3 3-3s3 1.3 3 3m5-5v11c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2V4h4v1h2l1-2h6l1 2h2c1.1 0 2 .9 2 2M7.5 9c0-.8-.7-1.5-1.5-1.5S4.5 8.2 4.5 9s.7 1.5 1.5 1.5S7.5 9.8 7.5 9M19 12c0-2.8-2.2-5-5-5s-5 2.2-5 5s2.2 5 5 5s5-2.2 5-5"/></svg>
                                     </a>
-                                    <input type="file" accept="images/*" name="avatar">
+                                    <input type="file" accept="images/*" name="image">
                                 </div>
                             </div>
                             <!-- Full Name -->
@@ -131,7 +131,7 @@
             const avatarFileUpload = document.getElementById('AvatarFileUpload')
             const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
             const imageSelector = avatarFileUpload.querySelector('.avatar-selector-btn')
-            const imageInput = avatarFileUpload.querySelector('input[name="avatar"]')
+            const imageInput = avatarFileUpload.querySelector('input[name="image"]')
 
             imageSelector.addEventListener('click', e => {
                 e.preventDefault()
