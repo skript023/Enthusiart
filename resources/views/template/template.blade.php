@@ -5,11 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Enthusiart</title>
-		<link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo-72.png">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/img/logo-72.png">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="../assets/css/style.css">
+		<link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
 </head>
 <body>
 	<!-- Header Start  -->
@@ -51,7 +51,7 @@
 			</div>
 
 			<hr class="my-2" style="width: 1000px;">
-		
+
 			<!-- Copyright -->
 			<div class="cr-text p-4">
 				<h6>Copyright © 2023 Enthusiart</h6>

@@ -35,7 +35,7 @@
                             <p class="mb-3">Profile Picture</p>
                             <div id="AvatarFileUpload">
                                 <div class="selected-image-holder">
-                                    <img src="{{ asset('storage') }}/uploads/avatar/vector-10.svg" alt="AvatarInput">
+                                    <img src="{{ asset('storage') }}/uploads/avatar/{{ auth()->user()->image }}" alt="AvatarInput">
                                 </div>
                                 <div class="avatar-selector">
                                     <a href="#" class="avatar-selector-btn">
