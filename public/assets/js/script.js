@@ -46,6 +46,16 @@ inputFile.addEventListener('change', function () {
     }
 })
 
+// Sidebar Profile
+function showEditProfile() {
+    document.getElementById("editProfile").style.display = "block";
+    document.getElementById("changePassword").style.display = "none";
+}
+function showChangePassword() {
+    document.getElementById("editProfile").style.display = "none";
+    document.getElementById("changePassword").style.display = "block";
+}
+
 //Upload Avatar
 const avatarFileUpload = document.getElementById('AvatarFileUpload')
 const imageViewer = avatarFileUpload.querySelector('.selected-image-holder>img')
