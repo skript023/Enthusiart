@@ -32,7 +32,7 @@
 				<div class="footer-links col-md-2 col-lg-12 col-xl-2 mx-auto mb-4">
 					<h5 class="mb-4">Links</h5>
 					<p><a href="#" class="links">Home</a></p>
-					<p><a href="#" class="links">About</a></p>
+					<p><a href="/about" class="links">About</a></p>
 				</div>
 
 				<!-- Artworks Link -->
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 
-			<hr class="my-2" style="width: 1000px;">
+			<hr class="my-2">
 
 			<!-- Copyright -->
 			<div class="cr-text p-4">
