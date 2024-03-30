@@ -50,7 +50,7 @@
     line-height: normal;
 }
 .navbar-nav .nav-link.active {
-    font-weight: bold;
+    font-weight: 500;
     color: #364A99;
 }
 .nav-link:hover {
@@ -104,13 +104,13 @@
 }
 .about-title {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
     margin: 0 auto;
 }
 .section-title {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0 auto;
 }
 .section-text {
@@ -460,10 +460,18 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     object-position: center;
     z-index: 2;
 }
-.figure {
+.gallery-figure {
+    position: relative;
     border: 1px #cccccc solid;
-    padding: 4px;
-    margin: auto;
+    padding: 16px;
+    margin: 0 auto;
+}
+.img-fluid {
+    width: 100%;
+    min-height: 320px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .detail-section h2.artwork-title {
     font-size: 24px;
@@ -472,14 +480,6 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
 .detail-section h3.artist-name {
     font-size: 18px;
     font-weight: 500;
-}
-.details-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.details-wrapper span {
-    margin-left:100px
 }
 .table-wrapper>.table-row {
     display: table-row;

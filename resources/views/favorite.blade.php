@@ -9,7 +9,9 @@
                 <div class="d-flex justify-content-between">
                     <h2 class="artist-name">Raden Saleh</h2>
                     <div class="fav-wrapper">
-                        <i class="fa-solid fa-heart fa-xl" role="button" style="color: #E61010;"></i>
+                        <a href="#">
+                            <i class="fa-solid fa-heart fa-xl" style="color: #E61010;"></i>
+                        </a>
                     </div>
                 </div>
                 <img src="../assets/img/1.jpg" class="card-img-top">
@@ -24,7 +26,9 @@
                 <div class="d-flex justify-content-between">
                     <h2 class="artist-name">Raden Saleh</h2>
                     <div class="fav-container">
-                        <i class="fa-solid fa-heart fa-xl" role="button" style="color: #E61010;"></i>
+                        <a href="#">
+                            <i class="fa-solid fa-heart fa-xl" style="color: #E61010;"></i>
+                        </a>
                     </div>
                 </div>
                 <img src="../assets/img/1.jpg" class="card-img-top">
@@ -39,7 +43,9 @@
                 <div class="d-flex justify-content-between">
                     <h2 class="artist-name">Raden Saleh</h2>
                     <div class="fav-container">
-                        <i class="fa-solid fa-heart fa-xl" role="button" style="color: #E61010;"></i>
+                        <a href="#">
+                            <i class="fa-solid fa-heart fa-xl" style="color: #E61010;"></i>
+                        </a>
                     </div>
                 </div>
                 <img src="../assets/img/1.jpg" class="card-img-top">

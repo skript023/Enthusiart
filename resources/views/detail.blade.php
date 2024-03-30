@@ -5,15 +5,17 @@
         <div class="content-wrapper" style="padding: 30px 30px; background-color: #F0F3FF;;">
             <div class="row">
                 <div class="col-lg-6">
-                    <figure>
+                    <figure class="gallery-figure">
                         <img src="../assets/img/1.jpg" class="img-fluid" alt="Artwork">
                     </figure>
                 </div>
                 <div class="col-lg-6">
                     <div class="desc-wrapper">
-                        <h2 class="artwork-title">Perburuan Banteng</h4>
-                        <h3 class="artist-name">Raden Saleh</h5>
-                        <i class="fa-regular fa-heart fa-xl mt-4" role="button" style="color: #364A99;"></i>
+                        <h2 class="artwork-title">Perburuan Banteng</h2>
+                        <h3 class="artist-name">Raden Saleh Sjarif Boestaman</h3>
+                        <a href="#">
+                            <i class="fa-regular fa-heart fa-xl mt-4" style="color: #364A99;"></i>
+                        </a>
                     </div>
                     <hr style="margin-top: 44px;">
                     <div class="details-wrapper">
