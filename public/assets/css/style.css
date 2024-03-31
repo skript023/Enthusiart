@@ -74,7 +74,7 @@
 }
 .btn-link:hover {
     color: #364A99;
-    font-weight: bold;
+    font-weight: 500;
 }
 .btn-fill {
     background-color: #364A99;
@@ -110,7 +110,7 @@
 }
 .section-title {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0 auto;
 }
 .section-text {
@@ -469,12 +469,9 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     flex-direction: column;
     margin: 0 auto;
 }
-.gallery-figure img {
-    width: 100%;
-}
 .img-fluid {
     width: 100%;
-    min-height: 320px;
+    min-height: 100%;
     align-items: center;
     display: flex;
     justify-content: center;
