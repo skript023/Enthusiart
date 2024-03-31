@@ -110,7 +110,7 @@
 }
 .section-title {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
     margin: 0 auto;
 }
 .section-text {
@@ -462,9 +462,15 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
 }
 .gallery-figure {
     position: relative;
-    border: 1px #cccccc solid;
-    padding: 16px;
+    border: 15px ridge #221A17;
+    background-color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+}
+.gallery-figure img {
+    width: 100%;
 }
 .img-fluid {
     width: 100%;
