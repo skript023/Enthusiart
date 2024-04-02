@@ -64,6 +64,9 @@
                                 <li><a class="dropdown-item" href="{{ route('profile') }}">My Account</a></li>
                                 <li><a class="dropdown-item" href="/myartwork">My Artworks</a></li>
                                 <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
                                     <form action="{{ route('logout') }}" method="get">
                                         @csrf
                                         <button type="submit" class="dropdown-item">Logout</button>

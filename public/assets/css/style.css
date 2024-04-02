@@ -28,15 +28,15 @@
     display: flex;
 }
 @media (max-width: 768px) {
-  .navbar-nav .nav-item {
-    display: block;
-    text-align: center;
-    margin: auto;
-  }
-  .ml-auto {
-    margin-left: 0;
-    text-align: left;
-  }
+    .navbar-nav .nav-item {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    .ml-auto {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 .logo-wrapper img {
     max-width: 100%;
@@ -50,7 +50,7 @@
     line-height: normal;
 }
 .navbar-nav .nav-link.active {
-    font-weight: 500;
+    font-weight: 600;
     color: #364A99;
 }
 .nav-link:hover {
@@ -74,7 +74,7 @@
 }
 .btn-link:hover {
     color: #364A99;
-    font-weight: 500;
+    font-weight: 600;
 }
 .btn-fill {
     background-color: #364A99;
@@ -121,13 +121,18 @@
     margin-right: 10px;
 }
 .vector1, .vector3 {
-    width: 400px;
-    height: 400px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
 }
 .vector2 {
-    width: 400px;
-    height: 400px;
-    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 60px;
+}
+.vector4, .vector5 {
+    max-width: 100%;
+    height: auto;
 }
 .explore-section {
     background-color: #E9EEFC;
@@ -149,13 +154,13 @@
 .footer-brand h4 {
     color: #364A99;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     margin-top: 12px;
 }
 .footer-brand p {
     color: #000000;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: normal;
 }
 .footer-links h5 {
     font-weight: bold;
@@ -177,8 +182,8 @@
     min-height: 90vh;
 }
 .form-wrapper {
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     margin: 0 auto;
     padding: 30px;
     background-color: #ffffff;
@@ -271,13 +276,13 @@
     color: #6A6A6A;
     text-align: left;
 }
-.gallery-section h2.artist-name {
+.card-section h2.artist-name {
     color: #364A99;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 16px;
 }
-.gallery-section h2.artwork-title {
+.card-section h2.artwork-title {
     color: #364A99;
     font-size: 14px;
     font-weight: bold;

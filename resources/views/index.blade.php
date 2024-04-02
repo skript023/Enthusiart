@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="../assets/img/vector-01.png" class="vector1" alt="About">
+                <img src="../assets/img/vector-01.png" class="vector1" alt="About" width="360">
             </div>
             <div class="col-md-6">
                 <h1 class="about-title">About</h1>
@@ -55,7 +55,7 @@
                 <a class="btn btn-fill" href="/gallery">Explore Artworks</a>
             </div>
             <div class="col-md-6">
-                <img src="../assets/img/vector-02.png" class="vector2" alt="Explore Artworks">
+                <img src="../assets/img/vector-02.png" class="vector2" alt="Explore Artworks" width="360">
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-6">
-                <img src="../assets/img/vector-03.png" class="vector3" alt="Join as an Artist">
+                <img src="../assets/img/vector-03.png" class="vector3" alt="Join as an Artist" width="360">
             </div>
             <div class="col-md-6">
                 <h2 class="section-title">Share your masterpiece!</h2>

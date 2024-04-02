@@ -54,7 +54,7 @@
 
 			<!-- Copyright -->
 			<div class="cr-text p-4">
-				<h6>Copyright © 2023 Enthusiart</h6>
+				<h6>Copyright &copy; 2024 Enthusiart</h6>
 			</div>
 		</div>
 	</footer>

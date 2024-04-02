@@ -1,6 +1,6 @@
 @extends('template.template')
 @section('content')
-<section class="py-5 gallery-section" style="margin-top: 80px;">
+<section class="py-5 card-section" style="margin-top: 80px;">
     <div class="container">
         <h1 class="page-title text-center">Artworks</h1>
         <!-- Card Section -->
@@ -15,7 +15,7 @@
                     </div>
                     <img src="{{ asset('assets') }}/gallery/{{ $gallery->image }}" class="card-img-top">
                     <div class="card-body">
-                        <h2 class="art-title">{{ $gallery->artwork_name }}</h2>
+                        <h2 class="artwork-title">{{ $gallery->artwork_name }}</h2>
                         <p class="card-desc">{{ $gallery->materials }}<br>{{ $gallery->dimension }}</p>
                         <a href="#" class="card-link">View Details</a>
                     </div>

@@ -5,7 +5,7 @@
         <h1 class="page-title text-left m-2">My Account</h1>
         <div class="py-5 pb-3 flex-grow-1 d-flex flex-column flex-sm-row">
             <div class="row flex-grow-sm-1 flex-grow-1">
-                <div class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 pb-sm-0 pb-3">
+                <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 pb-sm-0 pb-3">
                     <div class=" border rounded-3 p-1 h-30" style="background-color: #F0F3FF;">
                         <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
                             <li class="nav-item">
@@ -22,10 +22,10 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </aside>
 
             <!-- Form Edit Profile -->
-            <div class="col h-100" id="editProfile">
+            <main class="col h-100" id="editProfile">
                 <div class="border rounded-3 p-3" style="background-color: #F0F3FF;">
                     <h4 class="section-title m-3 mb-5">Edit Profile</h4>
                     <div class="form-edit m-3 mt-4">
@@ -97,7 +97,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </main>
 
             <!-- Form Change Password -->
             <div class="col h-100" id="changePassword" style="display: none;">

@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row align-items-left mb-5">
                 <div class="col-md-6">
-                    <div class="logo-wrapper mt-3">
+                    <div class="logo-wrapper mt-3 mb-2">
                         <a class="logo-img" href="/">
                             <img src="../assets/img/logo-72.png" alt="Enthusiart Logo">
                         </a>
@@ -25,12 +25,10 @@
             <!-- Form Login -->
             <div class="row align-items-center">
                 <div class="col-md-6 order-md-last align-items-center mb-3">
-                    <div class="container left-signin justify-content-center">
-                        <img src="../assets/img/vector-05.png" class="vector4 mx-auto d-block" alt="Sign Up" width="440">
-                    </div>
+                    <img src="../assets/img/vector-05.png" class="vector4 mx-auto d-block" alt="Sign Up" width: "400">
                 </div>
                 <div class="col-md-6">
-                    <div class="container form-wrapper">
+                    <div class="container form-wrapper mb-5">
                         <h2 class="section-title text-center mb-4 m-3" style="font-size: 28px;">Sign In</h2>
                         <form action="/auth/login" method="post">
                             @csrf
