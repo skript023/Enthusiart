@@ -6,13 +6,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <figure class="gallery-figure">
-                        <img src="../assets/img/1.jpg" class="img-fluid" alt="Artwork">
+                        <img src="{{ asset('assets') }}/img/1.jpg" class="img-fluid" alt="Artwork">
                     </figure>
                 </div>
                 <div class="col-lg-6">
                     <div class="desc-wrapper">
-                        <h2 class="artwork-title">Perburuan Banteng</h2>
-                        <h3 class="artist-name">Raden Saleh Sjarif Boestaman</h3>
+                        <h2 class="artwork-title">{{ $art->artwork_name }}</h2>
+                        <h3 class="artist-name">{{ $art->artist_name }}</h3>
                         <a href="#">
                             <i class="fa-regular fa-heart fa-xl mt-4" style="color: #364A99;"></i>
                         </a>
@@ -40,6 +40,7 @@
                         <h2 style="font-size: 20px; font-weight: 600; margin-top: 36px;">About the Artwork</h2>
                         <p class="mt-4">Raden Saleh Sjarif Boestaman is regarded as Indonesia's first modern artist and was the first to study in Europe. Hunting was a major theme of his work, showing chaotic conflict between humans and animals. Perburuan Banteng includes a self-portrait: Raden Saleh is on the brown horse in the centre.</p>
                     </div>
+                </div>
             </div>
         </div>
     </div>

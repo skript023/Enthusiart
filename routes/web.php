@@ -44,6 +44,8 @@ Route::get('/about', fn () => view('about'));
 Route::get('/contact', fn ()=> view('contact'));
 Route::get('/login', fn () => view('login'))->name('login');
 Route::get('/register', fn() => view('register'));
+Route::get('/gallery', [GalleryController::class, 'index']);
+Route::get('/artwork/{id}', [GalleryController::class,'detail']);
 
 Route::get('/favorite', fn() => view('favorite'));
 Route::group(['middleware' => ['auth']], function () {
@@ -71,5 +73,4 @@ Route::group(['middleware' => ['auth']], function () {
     */
     Route::get('/user/profile', fn() => view('profile'))->name('profile');
     Route::get('/upload', fn() => view('upload'));
-    Route::get('/gallery', [GalleryController::class, 'index']);
 });

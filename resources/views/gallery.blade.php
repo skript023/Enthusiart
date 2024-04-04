@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h2 class="artwork-title">{{ $gallery->artwork_name }}</h2>
                         <p class="card-desc">{{ $gallery->materials }}<br>{{ $gallery->dimension }}</p>
-                        <a href="#" class="card-link">View Details</a>
+                        <a href="/artwork/{{ $gallery->id }}" class="card-link">View Details</a>
                     </div>
                 </div>
             @endforeach

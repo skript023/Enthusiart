@@ -15,6 +15,22 @@ class GalleryController extends Controller
         ]);
     }
 
+    public function detail(Request $request)
+    {
+        try
+        {
+            $gallery = Gallery::findOrFail($request->id);
+
+            return view('detail', [
+                'art' => $gallery->first()
+            ]);
+        }
+        catch (\Throwable $th)
+        {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
+    }
+
     public function create(Request $request)
     {
         $request->validate([
