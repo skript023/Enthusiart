@@ -1,39 +1,33 @@
 version: '3'
 services:
-  # PHP Service
-    Enthusiart:
+    # PHP Service
+    enthusiart:
         build:
             context: .
             dockerfile: Dockerfile
         container_name: enthusiart
-        restart: on-failure
-        depends_on:
-            - Enthusiart-Database
+        restart: unless-stopped
+        environment:
+            - COMPOSER_ALLOW_SUPERUSER=1
+        networks:
+            - linux_gaboot
         volumes:
             - .:/var/www/html
         ports:
-            - "9000:9000"
-
-  # MySQL Service
-    Enthusiart-Database:
-        image: postgres:latest
-        restart: on-failure
-        container_name: enthusiart-database
-        environment:
-            POSTGRES_DB: gaboot
-            POSTGRES_USER: docker
-            POSTGRES_PASSWORD: gaboot
+            - 9000:9000
+    nginx:
+        image: nginx:latest
+        container_name: enthusiart-nginx
+        restart: unless-stopped
         ports:
-            - 5433:5432
-        expose:
-            - 5432
-        networks:
-            - gaboot
-        shm_size: 128mb
+            - 8143:8143
         volumes:
-            - ./postgres:/dev/shm
-            - ./postgres/data:/var/lib/postgresql/data
-            - ./postgres/config:/etc/postgresql/
-
-volumes:
-  db_data:
+            - .:/var/www/html
+            - ./nginx:/etc/nginx/conf.d/
+        networks:
+            - linux_gaboot
+        depends_on:
+            - enthusiart
+networks:
+    linux_gaboot:
+        external: true
