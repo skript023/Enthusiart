@@ -13,9 +13,6 @@ services:
             - linux_gaboot
         volumes:
             - .:/var/www/html
-            - ./server/php/php.ini-production:/usr/local/etc/php/php.ini-development
-            - ./server/php/php.ini-production:/usr/local/etc/php/php.ini-production
-            - ./server/php/php.ini:/usr/local/etc/
         ports:
             - 9000:9000
     nginx:
