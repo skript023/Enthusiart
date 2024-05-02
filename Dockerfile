@@ -1,5 +1,5 @@
 # Stage 1: Build Laravel Application
-FROM php:8.2-fpm AS builder
+FROM php:8.2-fpm
 
 # Set working directory
 WORKDIR /var/www/html
@@ -32,9 +32,6 @@ RUN composer update
 
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-
-# Copy only necessary files from builder stage
-COPY --from=builder /var/www/html .
 
 #Copy env production
 COPY env.production .env
