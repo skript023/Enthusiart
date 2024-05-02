@@ -9,8 +9,8 @@ services:
         restart: unless-stopped
         environment:
             - COMPOSER_ALLOW_SUPERUSER=1
-        networks:
-            - linux_gaboot
+        # networks:
+        #     - linux_gaboot
         volumes:
             - .:/var/www/html
         ports:
@@ -24,8 +24,8 @@ services:
         volumes:
             - .:/var/www/html
             - ./server/nginx:/etc/nginx/conf.d/
-        networks:
-            - linux_gaboot
+        # networks:
+        #     - linux_gaboot
         depends_on:
             - enthusiart
 # networks:
