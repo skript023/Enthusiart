@@ -28,6 +28,6 @@ services:
             - linux_gaboot
         depends_on:
             - enthusiart
-networks:
-    linux_gaboot:
-        external: true
+# networks:
+#     linux_gaboot:
+#         external: true
