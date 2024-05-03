@@ -3,7 +3,6 @@
 # Laravel specific files
 .env
 /.env.*
-/vendor
 /node_modules
 
 # Docker specific files
