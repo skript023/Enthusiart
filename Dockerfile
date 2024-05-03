@@ -1,4 +1,4 @@
-# Use the official PHP 8.2 image as base
+# Stage 1: Build Laravel Application
 FROM php:8.2-fpm
 
 # Set working directory
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
+    libpq-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql
@@ -25,6 +26,9 @@ COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+#Copy env production
+COPY env.production .env
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
