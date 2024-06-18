@@ -25,13 +25,18 @@
                                 <input type="text" class="form-control" name="artist_name" id="artist_name" value="{{ auth()->user()->fullname }}" readonly required>
                             </div>
                             <!-- Category -->
-                            <div class="form-group mb-3">
+                            {{--  <div class="form-group mb-3">
                                 <label for="category" class="form-label">Category</label>
                                 <select class="form-select" id="category" name="category" required>
                                     <option value="" disabled selected>Select Category</option>
                                     <option value="Art">Art</option>
                                     <option value="Photography">Photography</option>
                                 </select>
+                            </div>  --}}
+                            <!-- Dimensions -->
+                            <div class="form-group">
+                                <label for="dimension" class="form-label">Dimensions</label>
+                                <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter dimensions of your artwork" required>
                             </div>
                             <!-- Materials -->
                             <div class="form-group">
@@ -51,11 +56,11 @@
                             <label for="year" class="form-label">Year of Artwork</label>
                             <input type="text" class="form-control" name="year" id="year" placeholder="Enter year of artwork" required>
                         </div>
-                        <!-- Dimensions -->
+                        {{--  <!-- Dimensions -->
                         <div class="form-group">
                             <label for="dimension" class="form-label">Dimensions</label>
                             <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter dimensions of your artwork" required>
-                        </div>
+                        </div>  --}}
                       </div>
                     </div>
                     <!-- Description -->

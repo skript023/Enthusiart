@@ -29,7 +29,7 @@
             <div class="card text-center justify-content-center align-items-center mt-3">
                 <div class="card-body flex-1 text-center justify-content-center align-items-center">
                     <i class="fa-solid fa-heart fa-2xl" style="color: #364A99;"></i>
-                    <p class="card-text">Add artworks to your favorite</p>
+                    <p class="card-text">Add artworks to favorite</p>
                 </div>
             </div>
         </div>

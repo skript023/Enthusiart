@@ -23,22 +23,22 @@
                         <div class="table-wrapper mt-4">
                             <div class="table-row">
                                 <div class="table-col head">Materials</div>
-                                <div class="table-col">Acrylic on Canvas</div>
+                                <div class="table-col">{{ $art->materials}}</div>
                             </div>
                             <div class="table-row">
                                 <div class="table-col head">Dimensions</div>
-                                <div class="table-col">110 x 80 cm</div>
+                                <div class="table-col">{{ $art->dimension}}</div>
                             </div>
                             <div class="table-row">
                                 <div class="table-col head">Year</div>
-                                <div class="table-col">1855</div>
+                                <div class="table-col">{{ $art->year}}</div>
                             </div>
                         </div>
                     </div>
                     <hr style="margin-top: 44px;">
                     <div class="about-wrapper">
                         <h2 style="font-size: 20px; font-weight: 600; margin-top: 36px;">About the Artwork</h2>
-                        <p class="mt-4">Raden Saleh Sjarif Boestaman is regarded as Indonesia's first modern artist and was the first to study in Europe. Hunting was a major theme of his work, showing chaotic conflict between humans and animals. Perburuan Banteng includes a self-portrait: Raden Saleh is on the brown horse in the centre.</p>
+                        <p class="mt-4">{{ $art->description}}</p>
                     </div>
                 </div>
             </div>

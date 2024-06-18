@@ -20,7 +20,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('gallery') ? 'active' : '' }}" href="/gallery">Gallery</a>
+                    </li>
+                    {{--  <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Artworks
                         </a>
@@ -28,7 +31,7 @@
                             <li><a class="dropdown-item" href="#">Art</a></li>
                             <li><a class="dropdown-item" href="#">Photography</a></li>
                         </ul>
-                    </li>
+                    </li>  --}}
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">About</a>
                     </li>
