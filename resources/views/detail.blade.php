@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <figure class="gallery-figure">
-                        <img src="{{ asset('assets') }}/img/1.jpg" class="img-fluid" alt="Artwork">
+                        <img src="{{ asset('storage') }}/uploads/arts/{{ $art->image }}" class="img-fluid" alt="Artwork">
                     </figure>
                 </div>
                 <div class="col-lg-6">

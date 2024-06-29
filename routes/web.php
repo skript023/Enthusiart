@@ -63,6 +63,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/user/update/{id}', [UserController::class, 'update']);
     Route::patch('/user/password/{id}', [UserController::class, 'update_password']);
     Route::get('/artwork/delete/{id}', [GalleryController::class,'delete']);
+    Route::get('/favorite/add/{gallery_id}', [FavoriteController::class, 'favorite']);
+    Route::get('/favorite/delete/{gallery_id}', [FavoriteController::class, 'favorite']);
+
     /*
     |--------------------------------------------------------------------------
     | Route View Under Middleware

@@ -19,11 +19,11 @@
                             </div>
                         </div>
                     </div>
-                    <img src="{{ asset('storage') }}/uploads/arts/{{ $artwork->image }}" class="card-img-top" alt="Art Nouveau">
+                    <img src="{{ asset('storage') }}/uploads/arts/{{ $artwork->image }}" class="card-img-top">
                     <div class="card-body">
-                        <h2 class="art-title">{{ $artwork->artwork_name }}</h2>
+                        <h2 class="artwork-title">{{ $artwork->artwork_name }}</h2>
                         <p class="card-desc">{{ $artwork->materials }}<br>{{ $artwork->dimension }}</p>
-                        <a href="#" class="card-link">View Details</a>
+                        <a href="/artwork/{{ $artwork->id }}" class="card-link">View Details</a>
                     </div>
                 </div>
             @endforeach

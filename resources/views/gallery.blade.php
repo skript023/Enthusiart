@@ -10,10 +10,12 @@
                     <div class="d-flex justify-content-between">
                         <h2 class="artist-name">{{ $gallery->artist_name }}</h2>
                         <div class="fav-wrapper">
-                            <i class="fa-regular fa-heart fa-xl" role="button" style="color: #364A99;"></i>
+                            <a href="/favorite/add/{{ $gallery->id }}">
+                                <i class="fa-regular fa-heart fa-xl" role="button" style="color: #364A99;"></i>
+                            </a>
                         </div>
                     </div>
-                    <img src="{{ asset('assets') }}/gallery/{{ $gallery->image }}" class="card-img-top">
+                    <img src="{{ asset('storage') }}/uploads/arts/{{ $gallery->image }}" class="card-img-top">
                     <div class="card-body">
                         <h2 class="artwork-title">{{ $gallery->artwork_name }}</h2>
                         <p class="card-desc">{{ $gallery->materials }}<br>{{ $gallery->dimension }}</p>

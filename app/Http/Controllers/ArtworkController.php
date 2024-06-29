@@ -22,8 +22,8 @@ class ArtworkController extends Controller
         {
             $request->validate([
                 'artist_name' => 'required',
-                'image' => 'required|file|max:2048',
-                'category' => 'required',
+                'image' => 'required|file|max:8192',
+                // 'category' => 'required',
                 'artwork_name' => 'required',
                 'year' => 'required',
                 'dimension' => 'required',

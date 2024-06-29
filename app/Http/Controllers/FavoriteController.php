@@ -29,4 +29,26 @@ class FavoriteController extends Controller
             return redirect()->intended('/');
         }
     }
+
+    public function delete(Request $request)
+    {
+        
+    }
+
+    function favorite(Request $request)
+    {
+        $favorite = favorite::find($request->gallery_id);
+
+        if ($favorite)
+        {
+            $favorite->delete();
+
+            return back();
+        }
+        favorite::create([
+            'gallery_id' => $request->gallery_id
+        ]);
+
+        return back();
+    }
 }

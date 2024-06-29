@@ -15,7 +15,8 @@ class favorite extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'gallery_id'
+        'gallery_id',
+        'user_id'
     ];
 
     /**
@@ -33,4 +34,14 @@ class favorite extends Model
      */
     protected $casts = [
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function gallery()
+    {
+        return $this->belongsTo(gallery::class, 'gallery_id', 'id');
+    }
 }

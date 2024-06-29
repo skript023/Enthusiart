@@ -276,13 +276,13 @@
     color: #6A6A6A;
     text-align: left;
 }
-.card-section h2.artist-name {
+.card-artwork h2.artist-name {
     color: #364A99;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 16px;
 }
-.card-section h2.artwork-title {
+.card-artwork h2.artwork-title {
     color: #364A99;
     font-size: 14px;
     font-weight: bold;

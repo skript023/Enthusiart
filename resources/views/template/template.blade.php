@@ -30,17 +30,18 @@
 
 				<!-- Links -->
 				<div class="footer-links col-md-2 col-lg-12 col-xl-2 mx-auto mb-4">
-					<h5 class="mb-4">Links</h5>
+					{{--  <h5 class="mb-4">Links</h5>  --}}
 					<p><a href="#" class="links">Home</a></p>
 					<p><a href="/about" class="links">About</a></p>
+					<p><a href="/gallery" class="links">Gallery</a></p>
 				</div>
 
 				<!-- Artworks Link -->
-				<div class="footer-links col-lg-2 col-xl-2 mx-auto mb-4">
+				{{--  <div class="footer-links col-lg-2 col-xl-2 mx-auto mb-4">
 					<h5 class="mb-4">Artworks</h5>
 					<p><a href="#" class="links">Art</a></p>
 					<p><a href="#" class="links">Photography</a></p>
-				</div>
+				</div>  --}}
 
 				<!-- Contact Us  -->
 				<div class="footer-links col-lg-2 col-xl-2 mx-auto mb-4">
@@ -54,7 +55,7 @@
 
 			<!-- Copyright -->
 			<div class="cr-text p-4">
-				<h6>Copyright &copy; 2024 Enthusiart</h6>
+				<h6>Copyright &copy; 2023 Enthusiart</h6>
 			</div>
 		</div>
 	</footer>
