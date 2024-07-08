@@ -47,7 +47,7 @@ Route::get('/register', fn() => view('register'));
 Route::get('/gallery', [GalleryController::class, 'index']);
 Route::get('/artwork/{id}', [GalleryController::class,'detail']);
 
-Route::get('/favorite', fn() => view('favorite'));
+// Route::get('/favorite', fn() => view('favorite'));
 Route::group(['middleware' => ['auth']], function () {
     /*
     |--------------------------------------------------------------------------
@@ -63,8 +63,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('/user/update/{id}', [UserController::class, 'update']);
     Route::patch('/user/password/{id}', [UserController::class, 'update_password']);
     Route::get('/artwork/delete/{id}', [GalleryController::class,'delete']);
-    Route::get('/favorite/add/{gallery_id}', [FavoriteController::class, 'favorite']);
-    Route::get('/favorite/delete/{gallery_id}', [FavoriteController::class, 'favorite']);
+    Route::post('/favorite/add', [FavoriteController::class, 'create']);
+    Route::delete('/favorite/delete/{id}', [FavoriteController::class, 'delete']);
+    Route::get('/favorite', [FavoriteController::class, 'favorite']);
 
     /*
     |--------------------------------------------------------------------------

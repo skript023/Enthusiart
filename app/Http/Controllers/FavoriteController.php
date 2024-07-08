@@ -8,6 +8,13 @@ use App\Models\favorite;
 
 class FavoriteController extends Controller
 {
+
+    public function favorite()
+    {
+        $favorites = favorite::where('user_id', auth()->user()->id)->with('gallery')->get();
+        return view('favorite', ['favorites' => $favorites]);
+    }
+
     public function create(Request $request)
     {
         $request->validate([
@@ -18,10 +25,11 @@ class FavoriteController extends Controller
             'gallery_id'
         ]);
 
+        $data['user_id'] = auth()->user()->id;
+
         try 
         {
             favorite::create($data);
-
             return back();
         } 
         catch (\Throwable $th) 
@@ -30,25 +38,15 @@ class FavoriteController extends Controller
         }
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
-        
-    }
+        $favorite = favorite::where('user_id', auth()->user()->id)->where('gallery_id', $id)->first();
 
-    function favorite(Request $request)
-    {
-        $favorite = favorite::find($request->gallery_id);
-
-        if ($favorite)
-        {
+        if ($favorite) {
             $favorite->delete();
-
-            return back();
+            return response()->json(['success' => true]);
         }
-        favorite::create([
-            'gallery_id' => $request->gallery_id
-        ]);
 
-        return back();
+        return response()->json(['success' => false]);
     }
 }
