@@ -194,6 +194,11 @@
 .form-group {
     margin-bottom: 20px;
 }
+.form-group textarea {
+    width: 970px;
+    height: 100px;
+    box-sizing: border-box;
+}
 .form-label {
     font-size: 16px;
 }

@@ -22,7 +22,7 @@ class GalleryController extends Controller
             $gallery = Gallery::findOrFail($request->id);
 
             return view('detail', [
-                'art' => $gallery->first()
+                'art' => $gallery
             ]);
         }
         catch (\Throwable $th)

@@ -13,7 +13,7 @@
                     <div class="desc-wrapper">
                         <h2 class="artwork-title">{{ $art->artwork_name }}</h2>
                         <h3 class="artist-name">{{ $art->artist_name }}</h3>
-                        <a href="#">
+                        <a href="javascript:void(0)" class="favorite" data-id="$art->id">
                             <i class="fa-regular fa-heart fa-xl mt-4" style="color: #364A99;"></i>
                         </a>
                     </div>
@@ -45,4 +45,66 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script>
+    $(document).ready(function() 
+    {
+        $('.favorite').click(function(e) {
+            e.preventDefault();
+
+            var galleryId = $(this).data('id');
+            var element = $(this);
+
+            if (element.find('i').hasClass('fa-regular')) 
+            {
+                $.ajax({
+                    url: '/favorite/add',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        gallery_id: galleryId
+                    },
+                    success: function(response) {
+                        if(response.success) 
+                        {
+                            element.find('i').removeClass('fa-regular').addClass('fa-solid').css('color', '#E61010');
+                        } 
+                        else 
+                        {
+                            console.log('Failed to add favorite:', response);
+                        }
+                    },
+                    error: function(response) {
+                        console.log('Error:', response);
+                    }
+                });
+            } 
+            else 
+            {
+                $.ajax({
+                    url: '/favorite/delete/' + galleryId,
+                    type: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    },
+                    success: function(response) {
+                        if(response.success) 
+                        {
+                            element.find('i').removeClass('fa-solid').addClass('fa-regular').css('color', '#364A99');
+                        } 
+                        else 
+                        {
+                            console.log('Failed to remove favorite:', response);
+                        }
+                    },
+                    error: function(response) {
+                        console.log('Error:', response);
+                    }
+                });
+            }
+        });
+    });
+</script>
+@endpush
 @endsection

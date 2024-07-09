@@ -60,6 +60,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/myartwork', [ArtworkController::class, 'myArtworks']);
     Route::post('/artwork/upload', [ArtworkController::class, 'upload']);
+    Route::get('/artwork/edit/{id}', [ArtworkController::class, 'edit']);
+    Route::patch('/artwork/update/{id}', [ArtworkController::class, 'update']);
     Route::patch('/user/update/{id}', [UserController::class, 'update']);
     Route::patch('/user/password/{id}', [UserController::class, 'update_password']);
     Route::get('/artwork/delete/{id}', [GalleryController::class,'delete']);
@@ -77,4 +79,5 @@ Route::group(['middleware' => ['auth']], function () {
     */
     Route::get('/user/profile', fn() => view('profile'))->name('profile');
     Route::get('/upload', fn() => view('upload'));
+    // Route::get('/artwork/edit/{id}', fn() => view('edit'));
 });

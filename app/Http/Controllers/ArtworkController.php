@@ -27,13 +27,14 @@ class ArtworkController extends Controller
                 'artwork_name' => 'required',
                 'year' => 'required',
                 'dimension' => 'required',
+                'description' => 'required',
                 'materials' => 'required'
             ]);
 
             $data = $request->only([
                 'artist_name',
                 'image',
-                'category',
+                // 'category',
                 'artwork_name',
                 'year',
                 'dimension',
@@ -62,6 +63,56 @@ class ArtworkController extends Controller
             dd($th);
             toastr()->error('Upload artwork Failed');
 
+            return back();
+        }
+    }
+
+    public function edit($id)
+    {
+        $artwork = gallery::findOrFail($id);
+        return view('edit', compact('artwork'));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'artwork_name' => 'required',
+            'artist_name' => 'required',
+            'materials' => 'required',
+            'dimension' => 'required',
+            'description' => 'required',
+            'year' => 'required'
+        ]);
+
+        $data = $request->only([
+            'artwork_name',
+            'artist_name',
+            'materials',
+            'dimension',
+            'description',
+            'year'
+        ]);
+
+        if ($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = auth()->user()->fullname . '.' . $extension;
+            $file->storePubliclyAs('uploads/arts', $filename, "public");
+
+            $data['image'] = $filename;
+        }
+
+        $artwork = gallery::find($request->id);
+
+        try
+        {
+            $artwork->update($data);
+
+            return redirect()->intended('/myartwork');
+        }
+        catch (\Throwable $th)
+        {
             return back();
         }
     }

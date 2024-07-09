@@ -28,7 +28,6 @@
 </section>
 
 @push('scripts')
-@push('scripts')
 <script>
     $(document).ready(function() 
     {
@@ -38,7 +37,8 @@
             var galleryId = $(this).data('id');
             var element = $(this);
 
-            if (element.find('i').hasClass('fa-regular')) {
+            if (element.find('i').hasClass('fa-regular')) 
+            {
                 $.ajax({
                     url: '/favorite/add',
                     type: 'POST',
@@ -47,10 +47,13 @@
                         gallery_id: galleryId
                     },
                     success: function(response) {
-                        if(response.success) {
+                        if(response.success) 
+                        {
                             element.find('i').removeClass('fa-regular').addClass('fa-solid').css('color', '#E61010');
-                        } else {
-                            console.log('Error adding favorite:', response);
+                        } 
+                        else 
+                        {
+                            console.log('Failed to add favorite:', response);
                         }
                     },
                     error: function(response) {
@@ -67,10 +70,13 @@
                         'X-CSRF-TOKEN': '{{ csrf_token() }}',
                     },
                     success: function(response) {
-                        if(response.success) {
+                        if(response.success) 
+                        {
                             element.find('i').removeClass('fa-solid').addClass('fa-regular').css('color', '#364A99');
-                        } else {
-                            console.log('Error removing favorite:', response);
+                        } 
+                        else 
+                        {
+                            console.log('Failed to remove favorite:', response);
                         }
                     },
                     error: function(response) {
@@ -81,6 +87,5 @@
         });
     });
 </script>
-@endpush
 @endpush
 @endsection
