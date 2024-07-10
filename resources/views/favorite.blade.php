@@ -44,7 +44,8 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function(response) {
-                    if(response.success) {
+                    if(response.success) 
+                    {
                         element.remove();
                     }
                 },

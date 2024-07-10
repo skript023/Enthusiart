@@ -57,7 +57,14 @@
                         }
                     },
                     error: function(response) {
-                        console.log('Error:', response);
+                        if (response.status === 401) 
+                        {
+                            window.location.href = '{{ route('login') }}';
+                        } 
+                        else 
+                        {
+                            console.log('Error:', response);
+                        }
                     }
                 });
             } 
@@ -80,7 +87,14 @@
                         }
                     },
                     error: function(response) {
-                        console.log('Error:', response);
+                        if (response.status === 401) 
+                        {
+                            window.location.href = '{{ route('login') }}';
+                        } 
+                        else 
+                        {
+                            console.log('Error:', response);
+                        }
                     }
                 });
             }

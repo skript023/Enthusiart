@@ -11,9 +11,16 @@ class GalleryController extends Controller
 {
     public function index()
     {
+        $favoriteIds = [];
+        
+        if (auth()->check()) 
+        {
+            $favoriteIds = favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray();
+        }
+
         return view('gallery', [
             'galleries' => gallery::all(),
-            'favoriteIds' => favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray()
+            'favoriteIds' => $favoriteIds
         ]);
     }
 
@@ -22,10 +29,16 @@ class GalleryController extends Controller
         try
         {
             $gallery = gallery::findOrFail($request->id);
+            $favoriteIds = [];
+
+            if (auth()->check()) 
+            {
+                $favoriteIds = favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray();
+            }
 
             return view('detail', [
                 'art' => $gallery,
-                'favoriteIds' => favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray()
+                'favoriteIds' => $favoriteIds
             ]);
         }
         catch (\Throwable $th)
