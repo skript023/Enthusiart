@@ -19,7 +19,7 @@ class FavoriteController extends Controller
     {
         if (!auth()->check()) 
         {
-            return redirect()->route('/login');
+            return redirect()->route('login');
         }
 
         $request->validate([
@@ -57,7 +57,8 @@ class FavoriteController extends Controller
                             ->where('gallery_id', $id)
                             ->first();
 
-        if ($favorite) {
+        if ($favorite) 
+        {
             $favorite->delete();
             return response()->json(['success' => true]);
         }

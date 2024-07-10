@@ -3,6 +3,10 @@
 <section class="py-5 card-section" style="margin-top: 80px;">
     <div class="container">
         <h1 class="page-title text-center">Artworks</h1>
+        <!-- Search Section -->
+        <div class="search-bar mb-4">
+            <input type="text" id="search-artworks" class="form-control" placeholder="Search Artworks">
+        </div>
         <!-- Card Section -->
         <div class="row d-flex">
             @foreach ($galleries as $gallery)
@@ -98,6 +102,24 @@
                     }
                 });
             }
+        });
+        $('#search-artworks').on('input', function() {
+            var keyword = $(this).val().toLowerCase();
+            
+            $('.card-artwork').each(function() {
+                var title = $(this).find('.artwork-title').text().toLowerCase();
+                var artist = $(this).find('.artist-name').text().toLowerCase();
+                var materials = $(this).find('.card-desc').text().toLowerCase();
+                
+                if (title.includes(keyword) || artist.includes(keyword) || materials.includes(keyword)) 
+                {
+                    $(this).show();
+                } 
+                else 
+                {
+                    $(this).hide();
+                }
+            });
         });
     });
 </script>
