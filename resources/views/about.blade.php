@@ -1,4 +1,5 @@
 @extends('template.template')
+@section('title', 'About - Enthusiart')
 @section('content')
 <!-- About Section -->
 <section class="py-5 about-section" style="margin: 0 auto;">

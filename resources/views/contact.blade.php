@@ -1,4 +1,5 @@
 @extends('template.template')
+@section('title', 'Contact - Enthusiart')
 @section('content')
 <!-- Section Contact -->
 <section class="py-5 contact-section" style="margin-top: 80px;">

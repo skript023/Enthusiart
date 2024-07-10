@@ -1,4 +1,5 @@
 @extends('template.template')
+@section('title', 'Edit Artwork - Enthusiart')
 @section('content')
 <section class="py-5 upload-section" style="margin-top: 80px;">
     <div class="container">

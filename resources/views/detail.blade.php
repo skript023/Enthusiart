@@ -1,4 +1,5 @@
 @extends('template.template')
+@section('title', 'Detail Artwork - Enthusiart')
 @section('content')
 <section class="py-5 detail-section" style="margin-top: 80px;">
     <div class="container">

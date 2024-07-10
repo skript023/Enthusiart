@@ -1,4 +1,5 @@
 @extends('template.template')
+@section('title', 'My Account - Enthusiart')
 @section('content')
 <section class="py-5 profile-section" style="margin-top: 80px;">
     <div class="container">
