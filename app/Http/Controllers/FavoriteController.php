@@ -27,20 +27,30 @@ class FavoriteController extends Controller
 
         $data['user_id'] = auth()->user()->id;
 
+        $favorite = favorite::where('user_id', $data['user_id'])
+                            ->where('gallery_id', $data['gallery_id'])
+                            ->first();
+
+        if ($favorite) {
+            return response()->json(['success' => false, 'message' => 'Already favorited']);
+        }
+
         try 
         {
             favorite::create($data);
-            return back();
+            return response()->json(['success' => true, 'message' => 'Artwork successfully added to favorite']);
         } 
         catch (\Throwable $th) 
         {
-            return redirect()->intended('/');
+            return response()->json(['success' => false, 'message' => 'Failed to add favorite']);
         }
     }
 
     public function delete($id)
     {
-        $favorite = favorite::where('user_id', auth()->user()->id)->where('gallery_id', $id)->first();
+        $favorite = favorite::where('user_id', auth()->user()->id)
+                            ->where('gallery_id', $id)
+                            ->first();
 
         if ($favorite) {
             $favorite->delete();

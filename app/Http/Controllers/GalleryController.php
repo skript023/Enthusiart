@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\gallery;
+use App\Models\favorite;
 
 class GalleryController extends Controller
 {
     public function index()
     {
         return view('gallery', [
-            'galleries' => gallery::all()
+            'galleries' => gallery::all(),
+            'favoriteIds' => favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray()
         ]);
     }
 
@@ -19,10 +21,11 @@ class GalleryController extends Controller
     {
         try
         {
-            $gallery = Gallery::findOrFail($request->id);
+            $gallery = gallery::findOrFail($request->id);
 
             return view('detail', [
-                'art' => $gallery
+                'art' => $gallery,
+                'favoriteIds' => favorite::where('user_id', auth()->user()->id)->pluck('gallery_id')->toArray()
             ]);
         }
         catch (\Throwable $th)

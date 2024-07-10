@@ -11,7 +11,7 @@
                         <h2 class="artist-name">{{ $gallery->artist_name }}</h2>
                         <div class="fav-wrapper">
                             <a href="javascript:void(0)" class="favorite" data-id="{{ $gallery->id }}" > 
-                                <i class="fa-regular fa-heart fa-xl" role="button" style="color: #364A99;"></i>
+                                <i class="fa-{{ in_array($gallery->id, $favoriteIds) ? 'solid' : 'regular' }} fa-heart fa-xl" role="button" style="color: {{ in_array($gallery->id, $favoriteIds) ? '#E61010' : '#364A99' }};"></i>
                             </a>
                         </div>
                     </div>

@@ -80,7 +80,7 @@ class ArtworkController extends Controller
             'artist_name' => 'required',
             'materials' => 'required',
             'dimension' => 'required',
-            'description' => 'required',
+            // 'description' => 'required',
             'year' => 'required'
         ]);
 

@@ -13,8 +13,8 @@
                     <div class="desc-wrapper">
                         <h2 class="artwork-title">{{ $art->artwork_name }}</h2>
                         <h3 class="artist-name">{{ $art->artist_name }}</h3>
-                        <a href="javascript:void(0)" class="favorite" data-id="$art->id">
-                            <i class="fa-regular fa-heart fa-xl mt-4" style="color: #364A99;"></i>
+                        <a href="javascript:void(0)" class="favorite" data-id="{{ $art->id }}">
+                            <i class="fa-{{ in_array($art->id, $favoriteIds) ? 'solid' : 'regular' }} fa-heart fa-xl mt-4" style="color: {{ in_array($art->id, $favoriteIds) ? '#E61010' : '#364A99' }};"></i>
                         </a>
                     </div>
                     <hr style="margin-top: 44px;">

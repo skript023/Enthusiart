@@ -25,7 +25,7 @@
 
 				<!-- Footer Brand -->
 				<div class="footer-brand col-lg-6 col-md-12 mb-4 mb-md-0">
-					<img src="../assets/img/logo-72.png" alt="Enthusiart">
+					<img src="{{ asset('assets') }}/img/logo-72.png" alt="Enthusiart">
 					<h4>Enthusiart</h4>
 					<p>Masterworks of Creativity</p>
 				</div>
