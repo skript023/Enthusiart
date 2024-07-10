@@ -67,7 +67,7 @@
                     <div class="box d-flex justify-content-center mt-0">
                         <div class="form-group">
                             <label for="description" class="col-sm-4 col-form-label">Description</label>
-                            <textarea class="form-control" name="description" id="description" style="width: 970px; height: 100px;"></textarea>
+                            <textarea class="form-control" name="description" id="description"></textarea>
                         </div>
                     </div>
                     <div class="btn-wrapper d-flex justify-content-end">
