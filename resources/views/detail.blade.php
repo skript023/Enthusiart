@@ -3,7 +3,7 @@
 @section('content')
 <section class="py-5 detail-section" style="margin-top: 80px;">
     <div class="container">
-        <div class="content-wrapper" style="padding: 30px 30px; background-color: #F0F3FF;;">
+        <div class="content-wrapper" style="padding: 30px 30px; background-color: #F0F3FF;">
             <div class="row">
                 <div class="col-lg-6">
                     <figure class="gallery-figure">
@@ -14,6 +14,7 @@
                     <div class="desc-wrapper">
                         <h2 class="artwork-title">{{ $art->artwork_name }}</h2>
                         <h3 class="artist-name">{{ $art->artist_name }}</h3>
+                        <h3 class="art-price mt-4">{{ $art->price }}</h3>
                         <a href="javascript:void(0)" class="favorite" data-id="{{ $art->id }}">
                             <i class="fa-{{ in_array($art->id, $favoriteIds) ? 'solid' : 'regular' }} fa-heart fa-xl mt-4" style="color: {{ in_array($art->id, $favoriteIds) ? '#E61010' : '#364A99' }};"></i>
                         </a>
@@ -41,6 +42,7 @@
                         <h2 style="font-size: 20px; font-weight: 600; margin-top: 36px;">About the Artwork</h2>
                         <p class="mt-4">{{ $art->description}}</p>
                     </div>
+                    <a href="/" class="btn btn-save mt-4">Buy Now</a>
                 </div>
             </div>
         </div>

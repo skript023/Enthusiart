@@ -50,7 +50,8 @@ class UserController extends Controller
             $data = $request->only([
                 'fullname',
                 'email',
-                'phone'
+                'phone',
+                'address'
             ]);
 
             if ($request->hasFile('image'))

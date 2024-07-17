@@ -57,8 +57,13 @@
                             </div>
                             <!-- Phone Number -->
                             <div class="form-group mb-3">
-                                <label for="phone" class="form-label">Phone Number <i>(optional)</i></label>
-                                <input value="{{ auth()->user()->phone }}" type="text" class="form-control" name="phone" id="phone" placeholder="">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input value="{{ auth()->user()->phone }}" type="text" class="form-control" name="phone" id="phone" placeholder="+62xxxxxxxxxxx">
+                            </div>
+                            <!-- Address -->
+                            <div class="form-group mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <textarea class="form-control" name="address" id="address" placeholder="">{{ auth()->user()->address }}</textarea>
                             </div>
                             <!-- Social Media -->
                             {{-- <div class="form-group mb-3">

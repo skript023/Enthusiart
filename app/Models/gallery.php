@@ -22,6 +22,7 @@ class gallery extends Model
         'artist_name',
         'materials',
         'dimension',
+        'price',
         'description',
         'year'
     ];

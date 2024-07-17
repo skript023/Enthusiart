@@ -27,6 +27,7 @@ class ArtworkController extends Controller
                 'artwork_name' => 'required',
                 'year' => 'required',
                 'dimension' => 'required',
+                'price' => 'required',
                 'description' => 'required',
                 'materials' => 'required'
             ]);
@@ -38,6 +39,7 @@ class ArtworkController extends Controller
                 'artwork_name',
                 'year',
                 'dimension',
+                'price',
                 'description',
                 'materials'
             ]);
@@ -80,6 +82,7 @@ class ArtworkController extends Controller
             'artist_name' => 'required',
             'materials' => 'required',
             'dimension' => 'required',
+            'price' => 'required',
             // 'description' => 'required',
             'year' => 'required'
         ]);
@@ -89,6 +92,7 @@ class ArtworkController extends Controller
             'artist_name',
             'materials',
             'dimension',
+            'price',
             'description',
             'year'
         ]);

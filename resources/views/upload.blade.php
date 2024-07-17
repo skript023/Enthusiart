@@ -57,11 +57,11 @@
                             <label for="year" class="form-label">Year of Artwork</label>
                             <input type="text" class="form-control" name="year" id="year" placeholder="Enter year of artwork" required>
                         </div>
-                        {{--  <!-- Dimensions -->
+                        <!-- Price -->
                         <div class="form-group">
-                            <label for="dimension" class="form-label">Dimensions</label>
-                            <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter dimensions of your artwork" required>
-                        </div>  --}}
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" name="price" id="price" placeholder="" required>
+                        </div>
                       </div>
                     </div>
                     <!-- Description -->

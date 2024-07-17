@@ -494,7 +494,7 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     object-position: center;
     z-index: 2;
 }
-.gallery-figure {
+/* .gallery-figure {
     position: relative;
     border: 15px ridge #221A17;
     background-color: #fff;
@@ -502,7 +502,7 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-}
+} */
 .img-fluid {
     width: 100%;
     min-height: 100%;
@@ -515,6 +515,10 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     font-weight: 600;
 }
 .detail-section h3.artist-name {
+    font-size: 18px;
+    font-weight: 400;
+}
+.detail-section h3.art-price {
     font-size: 18px;
     font-weight: 500;
 }
@@ -537,4 +541,40 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
 }
 .table-wrapper>.table-row>.table-col:not(:first-child) {
     padding-left: 20px;
+}
+.rounded-avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.order-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.detail-order {
+    max-width: 50%;
+}
+.detail-order p {
+    font-size: 14px;
+    margin: 0;
+}
+.img-art {
+    width: 50%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-container p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.total-price {
+    font-weight: 500;
 }

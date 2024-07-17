@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('dimension');
             $table->string('description');
             $table->string('year');
+            $table->bigInteger('price');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
             $table->timestamps();

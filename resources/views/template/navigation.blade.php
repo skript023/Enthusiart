@@ -60,7 +60,11 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-circle-user fa-xl m-3" style="color: #364A99;"></i>
+                                {{--  @if (Auth::user()->image)
+                                    <img src="{{ asset('storage/uploads/avatar/' . Auth::user()->image) }}" class="rounded-avatar m-3">
+                                @else  --}}
+                                    <i class="fa-solid fa-circle-user fa-xl m-3" style="color: #364A99;"></i>
+                                {{--  @endif  --}}
                                 <span class="d-none d-sm-inline">{{ Auth::user()->fullname }}</span>
                             </a>
                             <ul class="dropdown-menu">
