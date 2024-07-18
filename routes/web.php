@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ArtworkController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/favorite/add', [FavoriteController::class, 'create']);
     Route::delete('/favorite/delete/{id}', [FavoriteController::class, 'delete']);
     Route::get('/favorite', [FavoriteController::class, 'favorite']);
+    Route::get('/checkout/{id}', [OrderController::class, 'checkout']);
 
     /*
     |--------------------------------------------------------------------------

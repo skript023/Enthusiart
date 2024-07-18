@@ -556,7 +556,7 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
     max-width: 50%;
 }
 .detail-order p {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 .img-art {
@@ -577,4 +577,17 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
 }
 .total-price {
     font-weight: 500;
+}
+.price-bar {
+    position: relative;
+}
+.price-bar i {
+    position: absolute;
+    left: 10px;
+    top: 72%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.price-bar input {
+    padding-left: 35px;
 }

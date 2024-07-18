@@ -62,11 +62,14 @@
                             <label for="year" class="form-label">Year of Artwork</label>
                             <input type="text" class="form-control" name="year" id="year" value="{{ $artwork->year }}" placeholder="Enter year of artwork" required>
                         </div>
-                        {{--  <!-- Dimensions -->
+                        <!-- Price -->
                         <div class="form-group">
-                            <label for="dimension" class="form-label">Dimensions</label>
-                            <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter dimensions of your artwork" required>
-                        </div>  --}}
+                            <div class="price-bar">
+                                <label for="price" class="form-label">Price</label>
+                                <i class="fa-solid fa-rupiah-sign" style="color: #7d7d7d;"></i>
+                                <input type="number" class="form-control" name="price" id="price" value="{{ $artwork->price }}" placeholder="" required>
+                            </div>
+                        </div>
                       </div>
                     </div>
                     <!-- Description -->

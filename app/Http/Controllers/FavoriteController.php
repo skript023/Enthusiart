@@ -17,10 +17,10 @@ class FavoriteController extends Controller
 
     public function create(Request $request)
     {
-        if (!auth()->check()) 
-        {
-            return redirect()->route('login');
-        }
+        // if (!auth()->check()) 
+        // {
+        //     return redirect()->route('login');
+        // }
 
         $request->validate([
             'gallery_id' => 'required'
