@@ -35,10 +35,12 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="info-wrapper">
-                        <form action="/" method="POST" enctype="multipart/form-data">
+                        <form action="/order/{{ $art->id }}" method="POST">
                             @csrf
+                            {{--  <input type="hidden" class="form-control" name="art_id" value="{{ $art->art_id }}">  --}}
+                            <input type="hidden" class="form-control" name="price" value="{{ $art->price }}">
                             <!-- Full Name -->
-                            <div class="form-forup mb-3">
+                            <div class="form-group mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
                                 <input value="{{ auth()->user()->fullname }}" type="text" class="form-control" name="fullname" id="fullname" placeholder="" required>
                             </div>
@@ -57,8 +59,8 @@
                                 <label for="address" class="form-label">Address</label>
                                 <textarea class="form-control" name="address" id="address" placeholder="" required>{{ auth()->user()->address }}</textarea>
                             </div>
+                            <button type="submit" class="btn btn-save mt-4">Checkout</button>
                         </form>
-                        <button type="submit" class="btn btn-save mt-4">Make a Payment</button>
                     </div>
                 </div>
             </div>

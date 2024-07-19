@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/favorite/delete/{id}', [FavoriteController::class, 'delete']);
     Route::get('/favorite', [FavoriteController::class, 'favorite']);
     Route::get('/checkout/{id}', [OrderController::class, 'checkout']);
+    Route::post('/order/{id}', [OrderController::class, 'order']);
 
     /*
     |--------------------------------------------------------------------------

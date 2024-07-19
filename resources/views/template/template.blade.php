@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
+		<script type="text/javascript" src="https://app.stg.midtrans.com/snap/snap.js" data-client-key="{{config('midtrans.client_key')}}"></script>
+		<!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 </head>
 <body>
 	<!-- Header Start  -->

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('art_id')->nullable();
             $table->bigInteger('price');
-            $table->bigInteger('quantity');
+            $table->bigInteger('quantity')->default(1);
+            $table->string('address');
             $table->string('status');
             $table->timestamps();
         });
