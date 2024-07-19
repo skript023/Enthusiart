@@ -47,9 +47,8 @@ class PaymentController extends Controller
         }
         catch (\Throwable $th)
         {
-            dd($th);
             return response()->json([
-                'message' => 'Created payment failed, error code: ' + $th->getMessage(),
+                'message' => 'Created payment failed, error code: ' + $th->getCode(),
                 'success' => false
             ], 500);
         }

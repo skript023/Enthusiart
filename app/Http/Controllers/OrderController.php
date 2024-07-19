@@ -79,4 +79,26 @@ class OrderController extends Controller
             return back()->with('error',$th->getMessage());
         }
     }
+
+    function updateOrderOnTransaction(Request $request)
+    {
+        try
+        {
+            $order = order::findOrFail($request->id);
+
+            $order->status = $request->status;
+
+            return response()->json([
+                'message' => 'Order updated successfully.',
+                'success' => true
+            ]);
+        }
+        catch (\Throwable $th)
+        {
+            return response()->json([
+                'message' => 'Failed update order, error code: ' + $th->getCode(),
+                'success' => false
+            ], 500);
+        }
+    }
 }
