@@ -1,6 +1,23 @@
 version: '3'
 services:
     # PHP Service
+    mysql:
+        image: mariadb:latest
+        restart: unless-stopped
+        container_name: enthusiart-database
+        environment:
+            MYSQL_ROOT_PASSWORD: admin1234
+            MYSQL_DATABASE: enthusiart
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin1234
+        ports:
+            - 3306:3306
+        expose:
+            - 3306
+        networks:
+            - enthusiart_net
+        volumes:
+            - ./out/dump:/var/lib/mysql
     enthusiart:
         build:
             context: .
@@ -9,14 +26,16 @@ services:
         restart: unless-stopped
         environment:
             - COMPOSER_ALLOW_SUPERUSER=1
-        # networks:
-        #     - linux_gaboot
+        networks:
+            - enthusiart_net
         volumes:
             - .:/var/www/html
         ports:
             - 9000:9000
+        depends_on:
+            - mysql
     nginx:
-        image: nginx:latest
+        image: nginx
         container_name: enthusiart-nginx
         restart: unless-stopped
         ports:
@@ -24,10 +43,15 @@ services:
         volumes:
             - .:/var/www/html
             - ./server/nginx:/etc/nginx/conf.d/
-        # networks:
-        #     - linux_gaboot
+        networks:
+            - enthusiart_net
         depends_on:
             - enthusiart
+networks:
+    enthusiart_net:
+        driver: bridge
+
+
 # networks:
 #     linux_gaboot:
 #         external: true

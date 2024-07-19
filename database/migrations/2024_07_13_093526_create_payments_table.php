@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id')->nullable();
-            $table->string('transaction_id');
+            $table->string('transaction_id')->unique();
             $table->string('merchant_id');
             $table->bigInteger('gross_amount');
-            $table->string('name');
-            $table->string('description');
+            $table->string('name')->nullable();
+            $table->string('description')->nullable();
             $table->string('currency');
             $table->string('payment_type');
             $table->string('transaction_status');

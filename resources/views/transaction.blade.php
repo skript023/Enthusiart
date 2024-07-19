@@ -20,10 +20,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="info-wrapper">
-                        <p>Fullname: {{ $fullname }}</p>
-                        <p>Email: {{ $email }}</p>
-                        <p>Phone: {{ $phone }}</p>
-                        <p>Address: {{ $address }}</p>
+                        <p>Fullname: {{ $user->fullname }}</p>
+                        <p>Email: {{ $user->email }}</p>
+                        <p>Phone: {{ $user->phone }}</p>
+                        <p>Address: {{ $user->address }}</p>
                         <button type="submit" class="btn btn-save mt-4" id="pay-button">Pay Now</button>
                     </div>
                 </div>
