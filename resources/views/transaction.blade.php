@@ -1,7 +1,7 @@
 @extends('template.template')
 @section('title', 'Order Details - Enthusiart')
 @section('content')
-<section class="py-5 checkout-section" style="margin-top: 80px;">
+<section class="py-5 transaction-section" style="margin-top: 80px;">
     <div class="container">
         <h1 class="page-title text-center">Your Order</h1>
         <div class="content-wrapper" style="padding: 30px 30px; background-color: #F0F3FF;">

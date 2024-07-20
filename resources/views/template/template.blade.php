@@ -67,12 +67,6 @@
 	<!-- Footer End -->
 	
 	<script src="{{ asset('assets') }}/js/script.js"></script>
-	{{--  <script>
-		$(document).ready(function()
-		{
-			
-		});
-	</script>  --}}
     @stack('scripts')
 </body>
 </html>

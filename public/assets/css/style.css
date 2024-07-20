@@ -591,3 +591,27 @@ div#AvatarFileUpload > .avatar-selector > .avatar-selector-btn>img{
 .price-bar input {
     padding-left: 35px;
 }
+.order-head img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+}
+.order-field p {
+    font-weight: 600;
+}
+.order-field h5 {
+    font-weight: bold;
+}
+.order-field span, .order-field .fill-order {
+    font-weight: normal;
+}
+.order-card {
+    background-color: #F0F3FF;
+    padding: 30px;
+    border-radius: 5px;
+}
+.order-card .img-order {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
