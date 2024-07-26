@@ -24,6 +24,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
@@ -36,6 +37,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Print on Canvas',
                 'dimension' => '110x60cm',
                 'price' => 999000,
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
@@ -48,6 +50,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
+                'stock' => '1',
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
@@ -60,6 +63,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
@@ -72,6 +76,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
@@ -84,6 +89,7 @@ class GallerySeeder extends Seeder
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],

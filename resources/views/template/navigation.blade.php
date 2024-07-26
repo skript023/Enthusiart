@@ -70,7 +70,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('profile') }}">My Account</a></li>
                                 <li><a class="dropdown-item" href="/myartwork">My Artwork</a></li>
-                                <li><a class="dropdown-item" href="#">My Purchase</a></li>
+                                <li><a class="dropdown-item" href="/order/history">My Purchase</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

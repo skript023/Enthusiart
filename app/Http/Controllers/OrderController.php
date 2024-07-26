@@ -101,4 +101,35 @@ class OrderController extends Controller
             ], 500);
         }
     }
+
+    public function orderHistory(Request $request)
+    {
+        if (auth()->check())
+        {
+            $orders = order::with(['artwork','user'])->where('user_id', auth()->user()->id)->get();
+            // dd($orders);
+            return view('purchase',[
+                'orders' => $orders
+            ]);
+        }
+
+        return redirect('/login');
+    }
+
+    public function orderDetail(Request $request)
+    {
+        try 
+        {
+            $invoice = order::with(['artwork','user','payment'])->where('id', $request->id)->where('user_id', auth()->user()->id)->first();
+            
+            return view('invoice', [
+                'order' => $invoice,
+                'invoice_number' => rand(0, 4294967295)
+            ]);
+        } 
+        catch (\Throwable $th) 
+        {
+            dd($th);//throw $th;
+        }
+    }
 }

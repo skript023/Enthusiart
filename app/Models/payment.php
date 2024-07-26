@@ -46,4 +46,9 @@ class payment extends Model
     protected $casts = [
 
     ];
+
+    public function order()
+    {
+        return $this->belongsTo(order::class, 'order_id', 'id');
+    }
 }

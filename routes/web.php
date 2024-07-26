@@ -71,6 +71,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/favorite', [FavoriteController::class, 'favorite']);
     Route::get('/checkout/{id}', [OrderController::class, 'checkout']);
     Route::post('/order/{id}', [OrderController::class, 'order']);
+    Route::get('/order/history', [OrderController::class, 'orderHistory']);
+    Route::get('/order/invoice/{id}', [OrderController::class, 'orderDetail']);
 
     /*
     |--------------------------------------------------------------------------

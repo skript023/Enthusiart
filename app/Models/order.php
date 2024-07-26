@@ -17,4 +17,17 @@ class order extends Model
         'address',
         'status'
     ];
+
+    public function artwork()
+    {
+        return $this->hasOne(gallery::class, 'id', 'art_id');
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+    public function payment()
+    {
+        return $this->hasOne(payment::class, 'order_id', 'id');
+    }
 }
