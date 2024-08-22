@@ -19,6 +19,9 @@ return new class extends Migration
             $table->bigInteger('quantity')->default(1);
             $table->string('address');
             $table->string('status');
+            $table->bigInteger('total_price');
+            $table->string('invoice_number')->unique();
+            $table->string('snap_token')->nullable();
             $table->timestamps();
         });
     }

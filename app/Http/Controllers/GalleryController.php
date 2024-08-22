@@ -9,8 +9,9 @@ use App\Models\favorite;
 
 class GalleryController extends Controller
 {
-    public function index()
+    public function gallery()
     {
+        $galleries = gallery::paginate(12);
         $favoriteIds = [];
         
         if (auth()->check()) 
@@ -19,7 +20,7 @@ class GalleryController extends Controller
         }
 
         return view('gallery', [
-            'galleries' => gallery::all(),
+            'galleries' => $galleries,
             'favoriteIds' => $favoriteIds
         ]);
     }

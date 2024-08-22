@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\order;
 use App\Models\payment;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,22 @@ class PaymentController extends Controller
                 'fraud_status',
                 'expiry_time',
             ]);
+            
+            $order = order::where('invoice_number', $request->order_id)->firstOrFail();
+
+            if (in_array($request->transaction_status, ['settlement', 'capture']))
+            {
+                $payment = payment::updateOrCreate(['transaction_id' => $request->transaction_id], $data);
+
+                // $order = order::findOrFail($request->order_id);
+                $order->status = 'Success';
+                $order->save();
+
+                return response()->json([
+                    'message' => 'Payment and Order Status updated successfully',
+                    'success' => true
+                ], 200);
+            }
 
             if ($request->transaction_status == 'pending' && $request->status_code == 201)
             {

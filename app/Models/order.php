@@ -15,7 +15,10 @@ class order extends Model
         'price',
         'quantity',
         'address',
-        'status'
+        'status',
+        'total_price',
+        'invoice_number',
+        'snap_token'
     ];
 
     public function artwork()
@@ -28,6 +31,6 @@ class order extends Model
     }
     public function payment()
     {
-        return $this->hasOne(payment::class, 'order_id', 'id');
+        return $this->hasOne(payment::class, 'order_id', 'invoice_number');
     }
 }

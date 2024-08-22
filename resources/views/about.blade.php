@@ -15,22 +15,22 @@
         </div>
         <div class="row d-flex align-items-center mb-3">
             <h1 class="page-title text-center" style="margin-top: 80px;">Our Services</h1>
-            <div class="card text-center justify-content-center align-items-center mt-3">
+            <div class="card-about text-center justify-content-center align-items-center mt-3">
                 <div class="card-body flex-1 text-center justify-content-center align-items-center">
                     <img src="../assets/img/vector-06.png" alt="Artworks icon" style="width: 65px; height: 40px;">
-                    <p class="card-text">Find artworks</p>
+                    <p class="card-text text-center">Find artworks</p>
                 </div>
             </div>
-            <div class="card text-center justify-content-center align-items-center mt-3">
+            <div class="card-about text-center justify-content-center align-items-center mt-3">
                 <div class="card-body flex-1 text-center justify-content-center align-items-center">
                     <img src="../assets/img/vector-07.png" alt="Artworks icon" style="width: 50px; height: 45px;">
-                    <p class="card-text">Share your artworks</p>
+                    <p class="card-text text-center">Sell your precious artworks</p>
                 </div>
             </div>
-            <div class="card text-center justify-content-center align-items-center mt-3">
+            <div class="card-about text-center justify-content-center align-items-center mt-3">
                 <div class="card-body flex-1 text-center justify-content-center align-items-center">
-                    <i class="fa-solid fa-heart fa-2xl" style="color: #364A99;"></i>
-                    <p class="card-text">Add artworks to favorite</p>
+                    <i class="fa-solid fa-bag-shopping fa-2xl" style="color: #364A99;"></i>
+                    <p class="card-text text-center">Buy your favorite artworks</p>
                 </div>
             </div>
         </div>

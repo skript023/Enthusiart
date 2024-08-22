@@ -14,19 +14,22 @@
                             <p class="mt-2">{{ $art->artist_name }}, {{ $art->year }}</p>
                             <p class="mt-2">{{ $art->materials }}</p>
                             <p class="mt-2">{{ $art->dimension }}</p>
-                            <p class="mt-4" style="font-size: 16px; font-weight: 600;">Rp{{ number_format($art->price, 0, ',', '.') }}</p>
+                            <p class="mt-4" style="font-size: 16px; font-weight: 500;">
+                                Rp{{ number_format($art->price, 0, ',', '.') }}
+                                <span class="ms-2">×{{ $quantity }}</span>
+                            </p>
                         </div>
                     </div>
-                    {{--  <div class="price-container mt-4">
+                    <div class="price-container mt-4">
                         <div class="price-wrapper">
-                            <p>Price</p>
-                            <p class="total-price">Total</p>
+                            {{--  <p>Price</p>  --}}
+                            <p class="total-price">Total Price</p>
                         </div>
                         <div class="price-wrapper">
-                            <p>{{ $art->price }}</p>
-                            <p class="total-price">{{ $art->total_price }}</p>
+                            {{--  <p>Rp{{ number_format($art->price, 0, ',', '.') }}</p>  --}}
+                            <p class="total-price">Rp{{ number_format($total_price, 0, ',', '.') }}</p>
                         </div>
-                    </div>  --}}
+                    </div>
                     {{--  <hr>
                     <div class="form-group">
                         <label for="note" class="form-label">Note</label>
@@ -39,13 +42,15 @@
                             @csrf
                             {{--  <input type="hidden" class="form-control" name="art_id" value="{{ $art->art_id }}">  --}}
                             <input type="hidden" class="form-control" name="price" value="{{ $art->price }}">
+                            <input type="hidden" class="form-control" name="total_price" value="{{ $total_price }}">
+                            <input type="hidden" class="form-control" name="quantity" value="{{ $quantity }}">
                             <!-- Full Name -->
                             <div class="form-group mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
                                 <input value="{{ auth()->user()->fullname }}" type="text" class="form-control" name="fullname" id="fullname" placeholder="" required>
                             </div>
                             <!-- Email -->
-                            <div class="form-forup mb-3">
+                            <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input value="{{ auth()->user()->email }}" type="text" class="form-control" name="email" id="email" placeholder="" required>
                             </div>

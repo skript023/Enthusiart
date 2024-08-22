@@ -16,11 +16,11 @@ class GallerySeeder extends Seeder
     {
         $galleries = [
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'category_id' => null,
                 'image' => 'Enthusiart.jfif',
                 'artwork_name' => 'Resonance',
-                'artist_name' => 'Enthusiart',
+                'artist_name' => 'Nico Robin',
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
@@ -29,11 +29,11 @@ class GallerySeeder extends Seeder
                 'year' => '2024'
             ],
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'category_id' => null,
                 'image' => 'Rutinitas Realitas.jfif',
                 'artwork_name' => 'Rutinitas Realitas',
-                'artist_name' => 'Enthusiart',
+                'artist_name' => 'Nico Robin',
                 'materials' => 'Print on Canvas',
                 'dimension' => '110x60cm',
                 'price' => 999000,
@@ -46,20 +46,20 @@ class GallerySeeder extends Seeder
                 'category_id' => null,
                 'image' => 'Jalan Sunyi.jfif',
                 'artwork_name' => 'Jalan Sunyi',
-                'artist_name' => 'Utopia',
+                'artist_name' => 'Nico Robin',
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
-                'stock' => '1',
+                'stock' => 1,
                 'description' => 'Limited Edition',
                 'year' => '2024'
             ],
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'category_id' => null,
                 'image' => 'Contemplation.jfif',
                 'artwork_name' => 'Contemplation',
-                'artist_name' => 'Utopia',
+                'artist_name' => 'Nico Robin',
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
@@ -68,11 +68,11 @@ class GallerySeeder extends Seeder
                 'year' => '2024'
             ],
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'category_id' => null,
                 'image' => 'You & I.jfif',
                 'artwork_name' => 'You & I',
-                'artist_name' => 'Utopia',
+                'artist_name' => 'Nico Robin',
                 'materials' => 'Acrylic on Canvas',
                 'dimension' => '150x110cm',
                 'price' => 549000,
@@ -81,17 +81,17 @@ class GallerySeeder extends Seeder
                 'year' => '2024'
             ],
             [
-                'user_id' => 1,
+                'user_id' => 4,
                 'category_id' => null,
-                'image' => 'test.jfif',
-                'artwork_name' => 'Resonance',
-                'artist_name' => 'Enthusiart',
-                'materials' => 'Acrylic on Canvas',
-                'dimension' => '150x110cm',
-                'price' => 549000,
+                'image' => 'Anggrek.jpg',
+                'artwork_name' => 'Anggrek',
+                'artist_name' => 'Karthono Yudhokusumo',
+                'materials' => 'Oil on Canvas',
+                'dimension' => '72x91cm',
+                'price' => 999000,
                 'stock' => 1,
                 'description' => 'Limited Edition',
-                'year' => '2024'
+                'year' => '1956'
             ],
         ];
 

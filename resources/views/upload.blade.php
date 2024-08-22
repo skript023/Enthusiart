@@ -37,12 +37,20 @@
                             <!-- Dimensions -->
                             <div class="form-group">
                                 <label for="dimension" class="form-label">Dimensions</label>
-                                <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter dimensions of your artwork" required>
+                                <input type="text" class="form-control" name="dimension" id="dimension" placeholder="Enter size of your artwork" required>
                             </div>
                             <!-- Materials -->
                             <div class="form-group">
                                 <label for="materials" class="form-label">Materials</label>
-                                <input type="text" class="form-control" name="materials" id="materials" placeholder="Enter materials" required>
+                                <input type="text" class="form-control" name="materials" id="materials" placeholder="Enter materials of your artwork" required>
+                            </div>
+                            <!-- Price -->
+                            <div class="form-group">
+                                <div class="price-bar">
+                                    <label for="price" class="form-label">Price</label>
+                                    <i class="fa-solid fa-rupiah-sign" style="color: #7d7d7d;"></i>
+                                    <input type="number" class="form-control" name="price" id="price" placeholder="" required>
+                                </div>
                             </div>
                       </div>
 
@@ -57,13 +65,10 @@
                             <label for="year" class="form-label">Year of Artwork</label>
                             <input type="text" class="form-control" name="year" id="year" placeholder="Enter year of artwork" required>
                         </div>
-                        <!-- Price -->
-                        <div class="form-group">
-                            <div class="price-bar">
-                                <label for="price" class="form-label">Price</label>
-                                <i class="fa-solid fa-rupiah-sign" style="color: #7d7d7d;"></i>
-                                <input type="number" class="form-control" name="price" id="price" placeholder="" required>
-                            </div>
+                        <!-- Stock -->
+                        <div class="form-group mb-3">
+                            <label for="stock" class="form-label">Stock</label>
+                            <input type="text" class="form-control" name="stock" id="stock" placeholder="Enter stock" required>
                         </div>
                       </div>
                     </div>

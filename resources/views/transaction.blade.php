@@ -14,23 +14,44 @@
                             <p class="mt-2">{{ $art->artist_name }}, {{ $art->year }}</p>
                             <p class="mt-2">{{ $art->materials }}</p>
                             <p class="mt-2">{{ $art->dimension }}</p>
-                            <p class="mt-4" style="font-size: 16px; font-weight: 600;">Rp{{ number_format($art->price, 0, ',', '.') }}</p>
+                            <p class="mt-4" style="font-size: 16px; font-weight: 500;">
+                              Rp{{ number_format($art->price, 0, ',', '.') }}
+                              <span class="ms-2">×{{ $quantity }}</span>
+                            </p>
                         </div>
+                    </div>
+                    <div class="price-container mt-4">
+                      <div class="price-wrapper">
+                          <p class="total-price">Total Payment</p>
+                      </div>
+                      <div class="price-wrapper">
+                          <p class="total-price">Rp{{ number_format($total_price, 0, ',', '.') }}</p>
+                      </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="info-wrapper">
-                        <p>Fullname: {{ $user->fullname }}</p>
-                        <p>Email: {{ $user->email }}</p>
-                        <p>Phone: {{ $user->phone }}</p>
-                        <p>Address: {{ $user->address }}</p>
-                        <button type="submit" class="btn btn-save mt-4" id="pay-button">Pay Now</button>
+                  <div class="info-wrapper">
+                    <div class="info-detail mb-4">
+                        <h5 class="mb-2">Fullname: </h5>
+                        <p>{{ $user->fullname }}</p>
                     </div>
+                    <div class="info-detail mb-4">
+                        <h5 class="mb-2">Email: </h5>
+                        <p>{{ $user->email }}</p>
+                    </div>
+                    <div class="info-detail mb-4">
+                        <h5 class="mb-2">Phone: </h5>
+                        <p>{{ $user->phone }}</p>
+                    </div>
+                    <div class="info-detail mb-5">
+                        <h5 class="mb-2">Address: </h5>
+                        <p>{{ $user->address }}</p>
+                    </div>
+                    <button type="submit" class="btn btn-save" id="pay-button">Pay Now</button>
+                  </div>
                 </div>
             </div>
         </div>
-        {{--  <!-- @TODO: You can add the desired ID as a reference for the embedId parameter. -->
-        <div id="snap-container"></div>  --}}
     </div>
 </section>
 @push('scripts')
@@ -43,7 +64,7 @@
         onSuccess: function(result){
           /* You may add your own implementation here */
           alert("payment success!"); console.log(result);
-          window.location.replace('/order/history');
+          window.location.replace('/payment/success/{{ $order->id }}');
         },
         onPending: function(result){
           /* You may add your own implementation here */

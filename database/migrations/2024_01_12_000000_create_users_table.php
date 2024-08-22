@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('password');
             $table->string('image')->nullable();
+            $table->enum('role', ['artist', 'art_enthusiast', 'admin'])->nullable()->default('art_enthusiast');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

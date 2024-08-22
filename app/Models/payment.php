@@ -49,6 +49,6 @@ class payment extends Model
 
     public function order()
     {
-        return $this->belongsTo(order::class, 'order_id', 'id');
+        return $this->belongsTo(order::class, 'order_id', 'invoice_number');
     }
 }

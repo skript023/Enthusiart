@@ -69,8 +69,14 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('profile') }}">My Account</a></li>
-                                <li><a class="dropdown-item" href="/myartwork">My Artwork</a></li>
-                                <li><a class="dropdown-item" href="/order/history">My Purchase</a></li>
+                                @if(auth()->user()->role == 'artist')
+                                    <li><a class="dropdown-item" href="/myartwork">My Artwork</a></li>
+                                    <li><a class="dropdown-item" href="/sale">My Sale</a></li>
+                                @elseif(auth()->user()->role == 'art_enthusiast')
+                                    <li><a class="dropdown-item" href="/order/history">My Purchase</a></li>
+                                @elseif(auth()->user()->role == 'admin')
+                                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                                @endif
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

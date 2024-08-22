@@ -47,7 +47,14 @@
                             <!-- Materials -->
                             <div class="form-group">
                                 <label for="materials" class="form-label">Materials</label>
-                                <input type="text" class="form-control" name="materials" id="materials" value="{{ $artwork->materials }}" placeholder="Enter materials" required>
+                                <input type="text" class="form-control" name="materials" id="materials" value="{{ $artwork->materials }}" placeholder="Enter materials of your artwork" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="price-bar">
+                                    <label for="price" class="form-label">Price</label>
+                                    <i class="fa-solid fa-rupiah-sign" style="color: #7d7d7d;"></i>
+                                    <input type="number" class="form-control" name="price" id="price" value="{{ $artwork->price }}" placeholder="" required>
+                                </div>
                             </div>
                       </div>
 
@@ -62,13 +69,10 @@
                             <label for="year" class="form-label">Year of Artwork</label>
                             <input type="text" class="form-control" name="year" id="year" value="{{ $artwork->year }}" placeholder="Enter year of artwork" required>
                         </div>
-                        <!-- Price -->
-                        <div class="form-group">
-                            <div class="price-bar">
-                                <label for="price" class="form-label">Price</label>
-                                <i class="fa-solid fa-rupiah-sign" style="color: #7d7d7d;"></i>
-                                <input type="number" class="form-control" name="price" id="price" value="{{ $artwork->price }}" placeholder="" required>
-                            </div>
+                        <!-- Stock -->
+                        <div class="form-group mb-3">
+                            <label for="stock" class="form-label">Stock</label>
+                            <input type="text" class="form-control" name="stock" id="stock" value="{{ $artwork->stock }}" placeholder="Enter stock" required>
                         </div>
                       </div>
                     </div>

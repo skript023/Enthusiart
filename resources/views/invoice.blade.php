@@ -10,7 +10,7 @@
                     <img src="{{ asset('assets') }}/img/logo-72.png" alt="Enthusiart">
                     <div class="order-field d-flex align-items-end flex-column">
                         <p>Invoice Number</p>
-                        <p class="fill-order">{{$invoice_number}}</p>
+                        <p class="fill-order">{{ $invoice_number }}</p>
                     </div>
                 </div>
                 <div class="order-cust mt-5">
@@ -33,36 +33,46 @@
                 <div class="order-sum mt-5">
                     <div class="order-field">
                         <h5 class="mb-5">Order Summary</h5>
-                        <div class="d-flex">
-                            <p class="me-2">Artwork Name:</p>
-                            <p class="fill-order">{{$order->artwork->artwork_name}}</p>
-                        </div>
-                        <div class="d-flex">
-                            <p class="me-2">Artist Name:</p>
-                            <p class="fill-order">{{$order->artwork->artist_name}}</p>
-                        </div>
-                        <div class="d-flex mb-5">
-                            <p class="me-2">Price:</p>
-                            <p class="fill-order">Rp{{ number_format($order->artwork->price, 0, ',', '.') }}</p>
-                        </div>
+                        <table class="table mb-5">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <td scope="col" class="col-table">Artwork Name</td>
+                                    <td scope="col" class="col-table">Artist Name</td>
+                                    <td scope="col" class="col-table">Qty</td>
+                                    <td scope="col" class="col-table">Price</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">{{ $order->artwork->artwork_name }}</td>
+                                    <td>{{ $order->artwork->artist_name }}</td>
+                                    <td>{{ $order->quantity }}</td>
+                                    <td>Rp{{ number_format($order->artwork->price, 0, ',', '.') }}</td>
+                                </tr>
+                            </tbody>
+                            {{--  <tfoot class="table-secondary">
+                                <td colspan="3">Subtotal</td>
+                                <td>Rp{{ number_format($order->total_price, 0, ',', '.') }}</td>
+                            </tfoot>  --}}
+                        </table>
                         <div class="d-flex justify-content-between">
                             <div class="d-flex align-items-start flex-column">
                                 <p class="mb-2">Total Payment</p>
-                                <p class="fill-order">Rp{{ number_format($order->price, 0, ',', '.') }}</p>
+                                <p class="fill-order">Rp{{ number_format($order->total_price, 0, ',', '.') }}</p>
                             </div>
                             <div class="d-flex align-items-start flex-column">
                                 <p class="mb-2">Payment Method</p>
                                 <p class="fill-order">{{$order->payment->payment_type}}</p>
                             </div>
                             <div class="d-flex align-items-start flex-column">
+                                <p class="mb-2">Transaction Status</p>
+                                <p class="fill-order">{{$order->status}}</p>
+                            </div>
+                            <div class="d-flex align-items-start flex-column">
                                 <p class="mb-2">Payment Time</p>
                                 <p class="fill-order">{{$order->payment->transaction_time}}</p>
                             </div>
                         </div>
-                        {{--  <hr class="mt-5">
-                        <div class="d-flex justify-content-center mt-5">
-                            <a href="#" class="btn btn-save">Download Invoice</a>
-                        </div>  --}}
                     </div>
                 </div>
             </div>

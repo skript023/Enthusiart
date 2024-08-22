@@ -13,31 +13,31 @@ class PaymentSeeder extends Seeder
      */
     public function run(): void
     {
-        $payments = [];
+        // $payments = [];
 
-        for ($i = 1; $i < 15; $i++) {
-            $payments[] = 
-            [
-                'order_id' => $i,
-                'transaction_id' => $i,
-                'merchant_id' => config('midtrans.merchant_id'),
-                'gross_amount' => 549000,
-                'currency' => 'IDR',
-                'payment_type' => 'Bank Transfer',
-                'transaction_status' => 'settlement',
-                'transaction_time' => now(),
-                'fraud_status' => 'clean',
-                'expiry_time' => now()->addDays(7),
-                'name' => 'Admin ',
-                'description' => 'Payment description ' . $i,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
-        }
+        // for ($i = 1; $i < 15; $i++) {
+        //     $payments[] = 
+        //     [
+        //         'order_id' => $i,
+        //         'transaction_id' => $i,
+        //         'merchant_id' => config('midtrans.merchant_id'),
+        //         'gross_amount' => 549000,
+        //         'currency' => 'IDR',
+        //         'payment_type' => 'Bank Transfer',
+        //         'transaction_status' => 'settlement',
+        //         'transaction_time' => now(),
+        //         'fraud_status' => 'clean',
+        //         'expiry_time' => now()->addDays(7),
+        //         'name' => 'Admin ',
+        //         'description' => 'Payment description ' . $i,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ];
+        // }
 
-        foreach ($payments as $user)
-        {
-            payment::create($user);
-        }
+        // foreach ($payments as $user)
+        // {
+        //     payment::create($user);
+        // }
     }
 }

@@ -10,7 +10,7 @@
         <!-- Card Section -->
         <div class="row d-flex">
             @foreach ($artworks as $index => $artwork)
-                <div class="card-artwork">
+                <div class="card-artwork mb-4">
                     <div class="d-flex justify-content-between">
                         <h2 class="artist-name">{{ $artwork->artist_name }}</h2>
                         <div class="icon-wrapper">
@@ -29,6 +29,31 @@
                     </div>
                 </div>
             @endforeach
+
+            @if($artworks->count() > 0)
+            <div class="d-flex justify-content-center mt-5">
+                <ul class="pagination">
+                    <!-- Previous Page Link -->
+                    <li class="page-item {{ $artworks->onFirstPage() ? 'disabled' : '' }}">
+                        <a class="page-link" href="{{ $artworks->previousPageUrl() }}" tabindex="-1">Previous</a>
+                    </li>
+            
+                    <!-- Page Number Links -->
+                    @foreach ($artworks->getUrlRange(1, $artworks->lastPage()) as $page => $url)
+                        <li class="page-item {{ $page == $artworks->currentPage() ? 'active' : '' }}">
+                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+            
+                    <!-- Next Page Link -->
+                    <li class="page-item {{ $artworks->hasMorePages() ? '' : 'disabled' }}">
+                        <a class="page-link" href="{{ $artworks->nextPageUrl() }}">Next</a>
+                    </li>
+                </ul>
+            </div>
+            @else
+                <p class="text-center py-5">No artwork uploaded yet.</p>
+            @endif      
         </div>
     </div>
 </section>
