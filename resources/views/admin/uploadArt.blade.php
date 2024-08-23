@@ -65,7 +65,7 @@
         <!-- Stock -->
         <div class="form-group mb-3">
             <label for="stock" class="form-label">Stock</label>
-            <input type="text" class="form-control" name="stock" id="stock" placeholder="" required>
+            <input type="number" class="form-control" name="stock" id="stock" placeholder="" required>
         </div>
         <!-- Description -->
         <div class="form-group mb-3">
@@ -74,7 +74,7 @@
         </div>
     </div>
 </div>
-<button type="submit" class="btn btn-primary" style="margin: 0 25px;">Upload</button>
+<button type="submit" class="btn btn-primary" style="margin: 0 25px;">Update</button>
 </form>
 
 @push('scripts')

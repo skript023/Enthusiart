@@ -72,7 +72,7 @@
                         <!-- Stock -->
                         <div class="form-group mb-3">
                             <label for="stock" class="form-label">Stock</label>
-                            <input type="text" class="form-control" name="stock" id="stock" value="{{ $artwork->stock }}" placeholder="Enter stock" required>
+                            <input type="number" class="form-control" name="stock" id="stock" value="{{ $artwork->stock }}" placeholder="Enter stock" required>
                         </div>
                       </div>
                     </div>

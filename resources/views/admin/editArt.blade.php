@@ -70,7 +70,7 @@
         <!-- Stock -->
         <div class="form-group mb-3">
             <label for="stock" class="form-label">Stock</label>
-            <input value="{{ $post->stock }}"type="text" class="form-control" name="stock" id="stock" placeholder="" required>
+            <input value="{{ $post->stock }}" type="number" class="form-control" name="stock" id="stock" placeholder="" required>
         </div>
         <!-- Description -->
         <div class="form-group mb-3">

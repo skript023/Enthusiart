@@ -125,6 +125,7 @@ class AdminController extends Controller
                 'year' => 'required',
                 'dimension' => 'required',
                 'price' => 'required',
+                'stock' => 'required',
                 'description' => 'required',
                 'materials' => 'required'
             ]);
@@ -137,6 +138,7 @@ class AdminController extends Controller
                 'year',
                 'dimension',
                 'price',
+                'stock',
                 'description',
                 'materials'
             ]);
@@ -180,6 +182,7 @@ class AdminController extends Controller
             'materials' => 'required',
             'dimension' => 'required',
             'price' => 'required',
+            'stock' => 'required',
             // 'description' => 'required',
             'year' => 'required'
         ]);
@@ -190,6 +193,7 @@ class AdminController extends Controller
             'materials',
             'dimension',
             'price',
+            'stock',
             'description',
             'year'
         ]);

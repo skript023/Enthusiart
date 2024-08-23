@@ -56,6 +56,7 @@ class GalleryController extends Controller
             'materials' => 'required',
             'dimension' => 'required',
             'price' => 'required',
+            'stock' => 'required',
             'description' => 'required',
             'year' => 'required'
         ]);
@@ -66,6 +67,7 @@ class GalleryController extends Controller
             'materials',
             'dimension',
             'price',
+            'stock',
             'description',
             'year'
         ]);
@@ -101,6 +103,7 @@ class GalleryController extends Controller
             'materials' => 'required',
             'dimension' => 'required',
             'price' => 'required',
+            'stock' => 'required',
             'description' => 'required',
             'year' => 'required'
         ]);
@@ -111,6 +114,7 @@ class GalleryController extends Controller
             'materials',
             'dimension',
             'price',
+            'stock',
             'description',
             'year'
         ]);

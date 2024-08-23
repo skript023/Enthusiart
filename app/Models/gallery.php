@@ -23,6 +23,7 @@ class gallery extends Model
         'materials',
         'dimension',
         'price',
+        'stock',
         'description',
         'year'
     ];
