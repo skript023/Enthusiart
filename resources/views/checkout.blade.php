@@ -57,7 +57,7 @@
                             <!-- Phone Number -->
                             <div class="form-group mb-3">
                                 <label for="phone" class="form-label">Phone Number</label>
-                                <input value="{{ auth()->user()->phone }}" type="text" class="form-control" name="phone" id="phone" placeholder="+62xxxxxxxxxxx" required>
+                                <input value="{{ auth()->user()->phone }}" type="text" class="form-control" name="phone" id="phone" placeholder="" required>
                             </div>
                             <!-- Address -->
                             <div class="form-group mb-3">

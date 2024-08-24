@@ -62,6 +62,10 @@ class OrderController extends Controller
             $order = order::create($data);
             $art = gallery::findOrFail($order->art_id);
             $user = User::findOrFail($order->user_id);
+
+            $user->phone = $data['phone'];
+            $user->address = $data['address'];
+            $user->save();
             
             if ($art->stock < $order->quantity) 
             {
@@ -140,7 +144,7 @@ class OrderController extends Controller
     {
         if (auth()->check())
         {
-            $orders = order::with(['artwork','user'])->where('user_id', auth()->user()->id)->paginate(6);
+            $orders = order::with(['artwork','user'])->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(6);
             
             return view('purchase',[
                 'orders' => $orders

@@ -74,7 +74,7 @@
         </div>
     </div>
 </div>
-<button type="submit" class="btn btn-primary" style="margin: 0 25px;">Update</button>
+<button type="submit" class="btn btn-primary" style="margin: 0 25px;">Upload</button>
 </form>
 
 @push('scripts')
