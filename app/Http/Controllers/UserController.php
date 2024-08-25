@@ -16,13 +16,15 @@ class UserController extends Controller
             $request->validate([
                 'fullname' => 'required',
                 'email' => 'required',
-                'password' => 'required'
+                'password' => 'required',
+                'role' => 'required'
             ]);
 
             $data = $request->only([
                 'fullname',
                 'email',
-                'password'
+                'password',
+                'role'
             ]);
 
             $data['email_verified_at'] = now();
