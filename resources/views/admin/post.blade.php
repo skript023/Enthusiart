@@ -41,7 +41,7 @@
                             <td>{{ $post->year }}</td>
                             <td>{{ $post->stock }}</td>
                             <td>Rp{{ number_format($post->price, 0, ',', '.') }}</td>
-                            <td><img src="{{ asset('public') }}/storage/uploads/arts/{{ $post->image }}" width="100"></td>
+                            <td><img src="{{ asset('storage') }}/uploads/arts/{{ $post->image }}" width="100"></td>
                             <td>{{ $post-> description }}</td>
                             <td>
                                 <div class="btn-edit">
