@@ -12,7 +12,7 @@ class GalleryController extends Controller
 {
     public function gallery()
     {
-        $galleries = gallery::paginate(12);
+        $galleries = gallery::paginate(9);
         $favoriteIds = [];
         
         if (auth()->check()) 

@@ -11,7 +11,7 @@ class ArtworkController extends Controller
 {
     public function myArtworks(Request $request)
     {
-        $artworks = gallery::with(['user'])->where('user_id', auth()->user()->id)->paginate(12);
+        $artworks = gallery::with(['user'])->where('user_id', auth()->user()->id)->paginate(9);
 
         return view('myartworks', [
             'artworks' => $artworks

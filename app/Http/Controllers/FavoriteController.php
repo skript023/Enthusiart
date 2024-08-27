@@ -11,7 +11,7 @@ class FavoriteController extends Controller
 
     public function favorite()
     {
-        $favorites = favorite::where('user_id', auth()->user()->id)->with('gallery')->paginate(12);
+        $favorites = favorite::where('user_id', auth()->user()->id)->with('gallery')->paginate(9);
         return view('favorite', ['favorites' => $favorites]);
     }
 
