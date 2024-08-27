@@ -106,7 +106,7 @@ class ArtworkController extends Controller
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = $data['artwork_name'] . '-' . Carbon::now()->format('Ymd') . '.' . $extension;
+            $filename = $data['artwork_name'] . '-' . Carbon::now()->format('YmdHis') . '.' . $extension;
             $file->storePubliclyAs('uploads/arts', $filename, "public");
 
             $data['image'] = $filename;
