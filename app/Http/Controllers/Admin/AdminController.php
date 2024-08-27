@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\gallery;
 use App\Models\order;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -202,7 +203,7 @@ class AdminController extends Controller
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = auth()->user()->fullname . '.' . $extension;
+            $filename = $data['artwork_name'] . '-' . Carbon::now()->format('Ymd') . '.' . $extension;
             $file->storePubliclyAs('uploads/arts', $filename, "public");
 
             $data['image'] = $filename;

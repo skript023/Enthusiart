@@ -35,7 +35,7 @@
                             @if ($gallery->stock > 0)
                                 <span class="badge text-bg-primary ms-2">On Sale</span>
                             @else
-                                <span class="badge text-bg-secondary ms-2">Sold</span>
+                                <span class="badge text-bg-secondary ms-2">Sold Out</span>
                             @endif
                         </h2>
                         <p class="card-desc">{{ $gallery->materials }}<br>{{ $gallery->dimension }}</p>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\gallery;
+use Carbon\Carbon;
 
 class ArtworkController extends Controller
 {
@@ -105,7 +106,7 @@ class ArtworkController extends Controller
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = auth()->user()->fullname . '.' . $extension;
+            $filename = $data['artwork_name'] . '-' . Carbon::now()->format('Ymd') . '.' . $extension;
             $file->storePubliclyAs('uploads/arts', $filename, "public");
 
             $data['image'] = $filename;

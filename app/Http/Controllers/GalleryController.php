@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\gallery;
 use App\Models\favorite;
+use Carbon\Carbon;
 
 class GalleryController extends Controller
 {
@@ -76,7 +77,7 @@ class GalleryController extends Controller
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = auth()->user()->fullname . '.' . $extension;
+            $filename = $data['artwork_name'] . '.' . $extension;
             $file->storePubliclyAs('uploads/arts', $filename, "public");
 
             $data['image'] = $filename;
@@ -123,7 +124,7 @@ class GalleryController extends Controller
         {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = auth()->user()->fullname . '.' . $extension;
+            $filename = $data['artwork_name'] . '-' . Carbon::now()->format('Ymd') . '.' . $extension;
             $file->storePubliclyAs('uploads/arts', $filename, "public");
 
             $data['image'] = $filename;

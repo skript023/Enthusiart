@@ -19,7 +19,7 @@
                                     @if ($art->stock > 0)
                                         <h6><span class="badge text-bg-primary ms-3">On Sale</span></h6>
                                     @else
-                                        <h6><span class="badge text-bg-secondary ms-3">Sold</span></h6>
+                                        <h6><span class="badge text-bg-secondary ms-3">Sold Out</span></h6>
                                     @endif
                                 </h2>
                             </div>
