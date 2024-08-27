@@ -1,0 +1,69 @@
+name: Deploy to Server
+
+on:
+  # Runs on pushes targeting the default branch
+  # push:
+  #   branches: ['main']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add docker to apt repository
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            sudo apt-get update
+            sudo apt-get install ca-certificates curl
+            sudo install -m 0755 -d /etc/apt/keyrings
+            sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+            sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+            echo \
+              "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+              $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+              sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+            sudo apt-get update
+          "
+      - name: Install Tools For Deployment
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin composer nginx snapd"
+
+      - name: Install Certbot
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo snap install --classic certbot"
+
+      - name: Deploy from repository
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          if [ ! -d '/var/www/enthusiart' ]; then
+            cd /var/www && sudo git clone https://github.com/${{ github.repository }} enthusiart;
+          else
+            cd /var/www/enthusiart && sudo git pull origin main;
+          fi"
+      - name: Set Folder Ownership
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "chown -R www-data:www-data /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
+
+      - name: Set Folder Access Authority
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "chmod -R 775 /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
+
+      - name: Build and start Docker containers
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd /var/www/enthusiart && sudo docker compose up --build -d"
+
+      - name: Restart Nginx
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cp /var/www/enthusiart/enthusiart.conf /etc/nginx/sites-available/enthusiart.conf"
+
+      - name: Enable Nginx site
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo ln -s /etc/nginx/sites-available/enthusiart.conf /etc/nginx/sites-enabled/"
+
+      - name: Restart Nginx
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo nginx -t && sudo systemctl restart nginx"
