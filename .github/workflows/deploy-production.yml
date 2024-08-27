@@ -51,16 +51,16 @@ jobs:
             cd /var/www/enthusiart && sudo git pull origin main;
           fi"
       - name: Set Folder Ownership
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "chown -R www-data:www-data /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo chown -R www-data:www-data /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
 
       - name: Set Folder Access Authority
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "chmod -R 775 /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo chmod -R 775 /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache"
 
       - name: Build and start Docker containers
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cd /var/www/enthusiart && sudo docker compose up --build -d"
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo cd /var/www/enthusiart && sudo docker compose up --build -d"
 
       - name: Restart Nginx
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "cp /var/www/enthusiart/enthusiart.conf /etc/nginx/sites-available/enthusiart.conf"
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo cp /var/www/enthusiart/enthusiart.conf /etc/nginx/sites-available/enthusiart.conf"
 
       - name: Enable Nginx site
         run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo ln -s /etc/nginx/sites-available/enthusiart.conf /etc/nginx/sites-enabled/"
