@@ -32,8 +32,8 @@ RUN composer install --optimize-autoloader --no-dev
 COPY env.production .env
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache
-RUN chmod -R 775 /var/www/enthusiart/storage /var/www/enthusiart/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 #Caching Configuration
 RUN php artisan config:cache
