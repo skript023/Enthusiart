@@ -144,7 +144,7 @@ class OrderController extends Controller
     {
         if (auth()->check())
         {
-            $orders = order::with(['artwork','user'])->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(6);
+            $orders = order::with(['artwork','user'])->where('user_id', auth()->user()->id)->paginate(6);
             
             return view('purchase',[
                 'orders' => $orders
