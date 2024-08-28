@@ -13,6 +13,7 @@ class SaleController extends Controller
         {
             $sales = order::with(['artwork', 'user'])
                 ->whereHas('artwork', fn($query) => $query->where('user_id', auth()->user()->id))
+                ->orderBy('created_at', 'desc')
                 ->paginate(6);
 
             return view('sales', [
